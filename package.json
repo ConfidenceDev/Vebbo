@@ -1,0 +1,31 @@
+{
+  "name": "vebbo",
+  "version": "1.0.0",
+  "description": "Talk with strangers | Make new friends - All on Telegram",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "vebbo",
+    "video-chat"
+  ],
+  "author": {
+    "name": "Plurg Inc",
+    "email": "plurginc@gmail.com",
+    "url": "https://vebbo.onrender.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "telegraf": "^4.16.3",
+    "ton": "^13.9.0"
+  }
+}
