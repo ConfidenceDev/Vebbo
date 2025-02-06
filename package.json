@@ -1,7 +1,7 @@
 {
   "name": "vebbo",
   "version": "1.0.0",
-  "description": "Talk with strangers | Make new friends - All on Telegram",
+  "description": "Talk with people and make new friends - All on Telegram",
   "main": "app.js",
   "type": "module",
   "scripts": {

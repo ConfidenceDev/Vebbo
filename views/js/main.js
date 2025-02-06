@@ -1,8 +1,15 @@
-import { TonConnectUI } from "@tonconnect/ui";
+//import { TonConnectUI } from "https://cdn.jsdelivr.net/npm/@tonconnect/ui";
+
+const url = "https://vebbo.onrender.com/";
+//const url = "http://localhost:5002";
 
 // Initialize TonConnectUI
-const tonConnectUI = new TonConnectUI({
-  manifestUrl: "https://vebbo.onrender.com/tcm.json",
+/*const tonConnectUI = new TonConnectUI({
+  manifestUrl: `${url}/tcm.json`,
+});*/
+
+const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+  manifestUrl: `${url}/tcm.json`,
 });
 
 // Function to handle payments
@@ -18,7 +25,7 @@ async function handlePayment() {
     console.log("Payment sent:", result);
 
     // Send transaction hash to backend for verification
-    const response = await fetch("https://vebbo.onrender.com/note", {
+    const response = await fetch(`${url}/note`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ txHash: result.hash }),
