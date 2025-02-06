@@ -1,9 +1,9 @@
 import "dotenv/config";
 import path from "path";
 import { fileURLToPath } from "url";
-import { TonClient } from "ton";
 import express from "express";
 import { corsPayload } from "./cors/cors.js";
+import { Address } from "@ton/core";
 import { Telegraf } from "telegraf";
 
 const app = express();
@@ -17,61 +17,44 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
 
 const PORT = process.env.PORT || 5002;
-const client = new TonClient({
-  endpoint: "https://toncenter.com/api/v2/jsonRPC",
-});
-const MY_TON_WALLET = "UQAtV9kBd9sKYwMtcmopkIFOLb1KcobvujnctacUeutNf-za"; // Replace with your wallet address
-let pendingTxHashes = new Set(); // Store unverified transactions
-let verifiedPayments = new Set(); // Store confirmed transactions
+const MY_TON_WALLET =
+  process.env.WALLET || "UQAdyrHwaVRI3fnsp3id3iZdiPSW-rwzdkh42xAT1ggFbSyW";
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-// Save transaction hash & start verification
-app.post("/note", async (req, res) => {
-  const { txHash } = req.body;
-  if (!txHash)
-    return res.status(400).json({ error: "Invalid transaction hash" });
+app.post("/toWallet", async (req, res) => {
+  try {
+    const { address } = req.body;
+    if (!address)
+      return res.status(400).json({ error: "Public key is required" });
 
-  pendingTxHashes.add(txHash);
-  console.log("✅ Payment initiated:", txHash);
-
-  // Start checking for payment confirmation
-  await verifyPayment(txHash);
-
-  // Once verified, respond with success message
-  res.status(200).json({ message: "Payment successful" });
+    const parsedAddress = Address.parse(address);
+    return res.status(200).json({
+      wallet: parsedAddress.toString({ urlSafe: true, bounceable: false }),
+    });
+  } catch (error) {
+    console.error("Error converting public key:", error);
+    return res.status(500).json({ error: "Internal server error" });
+  }
 });
 
-// Function to verify payments
-async function verifyPayment(txHash) {
-  console.log("🔄 Checking transaction:", txHash);
+app.get("/notepay", async (req, res) => {
+  const payload = {
+    validUntil: Math.floor(Date.now() / 1000) + 60, // 60 sec
+    messages: [
+      {
+        address: MY_TON_WALLET,
+        amount: "100000000", // 0.1 TON (nanoTONs)
+      },
+    ],
+  };
+  res.status(200).json({ obj: payload });
+});
 
-  while (pendingTxHashes.has(txHash)) {
-    try {
-      const transactions = await client.getTransactions(MY_TON_WALLET);
+app.post("/note", async (req, res) => {
+  res.status(200).json({ message: "" });
+});
 
-      for (let tx of transactions) {
-        if (tx.hash === txHash && tx.inMessage?.value === "100000000") {
-          // 0.1 TON
-          console.log("✅ Payment confirmed from:", tx.inMessage.source);
-
-          pendingTxHashes.delete(txHash);
-          verifiedPayments.add(txHash);
-
-          // TODO: Unlock game for the user here
-          return;
-        }
-      }
-    } catch (error) {
-      console.error("❌ Error checking transaction:", error);
-    }
-
-    // Wait 5 seconds before re-checking
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-  }
-}
-
-// Start server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
