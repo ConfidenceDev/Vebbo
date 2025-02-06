@@ -17,4 +17,4 @@ const corsHeader = {
   optionsSuccessStatus: 200,
 };
 
-module.exports = cors(corsHeader);
+export const corsPayload = cors(corsHeader);

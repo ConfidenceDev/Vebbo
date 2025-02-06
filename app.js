@@ -1,12 +1,16 @@
 import "dotenv/config";
 import path from "path";
+import { fileURLToPath } from "url";
 import { TonClient } from "ton";
 import express from "express";
-import cors from "./cors/cors";
+import { corsPayload } from "./cors/cors.js";
 import { Telegraf } from "telegraf";
 
 const app = express();
-app.use(cors);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(corsPayload);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "views")));
