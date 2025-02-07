@@ -31,6 +31,10 @@ app.post("/toWallet", async (req, res) => {
       return res.status(400).json({ error: "Public key is required" });
 
     const parsedAddress = Address.parse(address);
+    console.log(address);
+    console.log(parsedAddress);
+    console.log(parsedAddress.toString({ urlSafe: true, bounceable: false }));
+
     return res.status(200).json({
       wallet: parsedAddress.toString({ urlSafe: true, bounceable: false }),
     });
