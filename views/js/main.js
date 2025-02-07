@@ -16,10 +16,9 @@ let walletConnected = false;
 // 🌟 Force recheck on page load
 async function loadWallet() {
   try {
-    const connectedWallet = await tonConnectUI.getWallet();
-    if (connectedWallet) {
+    const wallet = localStorage.getItem(store);
+    if (wallet) {
       walletLabel.innerText = `Wallet: ${connectedWallet.account.address}`;
-      localStorage.setItem(store, connectedWallet.account.address);
       walletConnected = true;
       connectBtn.innerText = "Disconnect Wallet";
       payBtn.disabled = false;
@@ -90,7 +89,7 @@ payBtn.addEventListener("click", async () => {
     if (data) {
       await tonConnectUI.sendTransaction(data.obj);
       tg.showAlert("Payment Successful ✅");
-      tg.sendData(JSON.stringify({ status: "success", tx: data.obj }));
+      //tg.sendData(JSON.stringify({ status: "success", tx: data.obj }));
     }
   } catch (error) {
     console.error("Payment error:", error);
