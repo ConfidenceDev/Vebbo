@@ -17,7 +17,7 @@ let walletConnected = false;
 async function loadWallet() {
   try {
     const savedWallet = localStorage.getItem(store);
-    tg.showAlert("Loaded Wallet from localStorage:", savedWallet);
+    //tg.showAlert("Loaded Wallet from localStorage:", savedWallet);
 
     if (savedWallet) {
       walletLabel.innerText = `Wallet: ${savedWallet}`;
