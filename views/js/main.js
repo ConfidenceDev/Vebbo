@@ -1,4 +1,4 @@
-const url = "https://vebbo.onrender.com/";
+const url = "https://vebbo.onrender.com";
 //const url = "http://localhost:5002"; // Change to your actual backend URL
 const tg = window.Telegram.WebApp;
 tg.expand(); // Ensure full screen
