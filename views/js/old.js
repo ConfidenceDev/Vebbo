@@ -20,6 +20,39 @@ async function load() {
   }
 }
 
+async function loadWallet2() {
+  try {
+    let connectedWallet = await tonConnectUI.getWallet();
+    console.log("Loaded Wallet from TonConnect:", connectedWallet);
+
+    if (connectedWallet && connectedWallet.account) {
+      // ✅ Wallet is connected
+      walletLabel.innerText = `Wallet: ${connectedWallet.account.address}`;
+      localStorage.setItem(store, connectedWallet.account.address);
+      walletConnected = true;
+      connectBtn.innerText = "Disconnect Wallet";
+      payBtn.disabled = false;
+
+      return;
+    }
+
+    const savedWallet = localStorage.getItem(store);
+    console.log("Loaded Wallet from localStorage:", savedWallet);
+
+    if (savedWallet) {
+      walletLabel.innerText = `Wallet: ${savedWallet}`;
+      walletConnected = true;
+      connectBtn.innerText = "Disconnect Wallet";
+      payBtn.disabled = false;
+    } else {
+      resetWalletUI();
+    }
+  } catch (error) {
+    console.error("Wallet Load Error:", error);
+    resetWalletUI();
+  }
+}
+
 load();
 connectBtn.addEventListener("click", async () => {
   try {

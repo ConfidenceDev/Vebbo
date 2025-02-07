@@ -13,28 +13,11 @@ const payBtn = document.getElementById("pay-btn");
 const store = "wallet";
 let walletConnected = false;
 
-const savedWallet = localStorage.getItem(store);
-tg.showAlert(savedWallet);
-
 // 🌟 Force recheck on page load
 async function loadWallet() {
   try {
-    let connectedWallet = await tonConnectUI.getWallet();
-    console.log("Loaded Wallet from TonConnect:", connectedWallet);
-
-    if (connectedWallet && connectedWallet.account) {
-      // ✅ Wallet is connected
-      walletLabel.innerText = `Wallet: ${connectedWallet.account.address}`;
-      localStorage.setItem(store, connectedWallet.account.address);
-      walletConnected = true;
-      connectBtn.innerText = "Disconnect Wallet";
-      payBtn.disabled = false;
-
-      return;
-    }
-
     const savedWallet = localStorage.getItem(store);
-    console.log("Loaded Wallet from localStorage:", savedWallet);
+    tg.showAlert("Loaded Wallet from localStorage:", savedWallet);
 
     if (savedWallet) {
       walletLabel.innerText = `Wallet: ${savedWallet}`;
@@ -66,7 +49,7 @@ connectBtn.addEventListener("click", async () => {
 
   try {
     if (!walletConnected) {
-      //await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
+      await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
       const walletInfo = await tonConnectUI.connectWallet();
       if (!walletInfo || !walletInfo.account)
         throw new Error("Wallet connection failed.");
