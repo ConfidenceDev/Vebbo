@@ -80,7 +80,6 @@ ul {
   animation: spin 1s linear infinite;
   justify-self: center;
   align-self: center;
-  display: none;
 }
 
 @keyframes spin {
@@ -104,6 +103,7 @@ ul {
   align-items: center;
   color: white;
   font-size: 1rem;
+  display: none;
 }
 
 .online-container span {
@@ -131,7 +131,6 @@ ul {
   flex: 1;
   overflow: hidden;
   font-size: 16px;
-  font-weight: bold;
   color: white;
 }
 
