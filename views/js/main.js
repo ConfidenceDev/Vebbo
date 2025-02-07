@@ -49,7 +49,7 @@ connectBtn.addEventListener("click", async () => {
 
   try {
     if (!walletConnected) {
-      await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
+      if (localStorage.getItem(store)) await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
       const walletInfo = await tonConnectUI.connectWallet();
       if (!walletInfo || !walletInfo.account)
         throw new Error("Wallet connection failed.");
