@@ -72,7 +72,7 @@ connectBtn.addEventListener("click", async () => {
     }
   } catch (error) {
     console.error("Wallet Connection Error:", error);
-    tg.showAlert("Failed to connect wallet. Try again." + error);
+    tg.showAlert(error);
     resetWalletUI();
   } finally {
     connectBtn.disabled = false; // Re-enable button
