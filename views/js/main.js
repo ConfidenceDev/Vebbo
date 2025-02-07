@@ -1,11 +1,8 @@
 const url = "https://vebbo.onrender.com/";
-//const url = "http://localhost:5002"; // Replace with your server URL
-
-// Initialize Telegram WebApp
+//const url = "http://localhost:5002"; // Change to your actual backend URL
 const tg = window.Telegram.WebApp;
-tg.expand(); // Expand to full screen
+tg.expand(); // Ensure full screen
 
-// Initialize TON Wallet Connect
 const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
   manifestUrl: `${url}/tcm.json`,
 });
@@ -16,26 +13,47 @@ const payBtn = document.getElementById("pay-btn");
 const store = "wallet";
 let walletConnected = false;
 
-// Load saved wallet connection
+// 🌟 Force recheck on page load
 async function loadWallet() {
-  const savedWallet = localStorage.getItem(store);
-  if (savedWallet) {
-    walletLabel.innerText = `Wallet: ${savedWallet}`;
-    walletConnected = true;
-    connectBtn.innerText = "Disconnect Wallet";
-    payBtn.disabled = false;
+  try {
+    const connectedWallet = await tonConnectUI.getWallet();
+    if (connectedWallet) {
+      walletLabel.innerText = `Wallet: ${connectedWallet.account.address}`;
+      localStorage.setItem(store, connectedWallet.account.address);
+      walletConnected = true;
+      connectBtn.innerText = "Disconnect Wallet";
+      payBtn.disabled = false;
+    } else {
+      resetWalletUI();
+    }
+  } catch (error) {
+    console.error("Wallet Load Error:", error);
+    resetWalletUI();
   }
 }
 
-loadWallet();
+// 🚀 Force UI Reset
+function resetWalletUI() {
+  walletLabel.innerText = "Wallet Address: Not connected";
+  localStorage.removeItem(store);
+  connectBtn.innerText = "Connect Wallet";
+  walletConnected = false;
+  payBtn.disabled = true;
+}
 
+// 🏗 Connect or Disconnect Wallet
 connectBtn.addEventListener("click", async () => {
+  if (connectBtn.disabled) return;
+  connectBtn.disabled = true; // Prevent multiple clicks
+
   try {
     if (!walletConnected) {
+      await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
       const walletInfo = await tonConnectUI.connectWallet();
-      const address = walletInfo.account.address;
+      if (!walletInfo || !walletInfo.account)
+        throw new Error("Wallet connection failed.");
 
-      // Send address to backend
+      const address = walletInfo.account.address;
       const response = await fetch(`${url}/toWallet`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -50,28 +68,28 @@ connectBtn.addEventListener("click", async () => {
       payBtn.disabled = false;
     } else {
       await tonConnectUI.disconnect();
-      walletLabel.innerText = "Wallet Address: Not connected";
-      walletConnected = false;
-      localStorage.removeItem(store);
-      connectBtn.innerText = "Connect Wallet";
-      payBtn.disabled = true;
+      resetWalletUI();
     }
   } catch (error) {
     console.error("Wallet Connection Error:", error);
-    tg.showAlert("Failed to connect wallet.");
+    tg.showAlert("Failed to connect wallet. Try again.");
+    resetWalletUI();
+  } finally {
+    connectBtn.disabled = false; // Re-enable button
   }
 });
 
+// 💸 Send Payment
 payBtn.addEventListener("click", async () => {
+  if (!walletConnected)
+    return tg.showAlert("Please connect your wallet first.");
+
   try {
     const response = await fetch(`${url}/notepay`);
     const data = await response.json();
-
     if (data) {
       await tonConnectUI.sendTransaction(data.obj);
       tg.showAlert("Payment Successful ✅");
-
-      // Share the note after payment
       tg.sendData(JSON.stringify({ status: "success", tx: data.obj }));
     }
   } catch (error) {
@@ -79,3 +97,5 @@ payBtn.addEventListener("click", async () => {
     tg.showAlert("Payment failed. Try again.");
   }
 });
+
+loadWallet(); // 🔄 Auto-load wallet on startup
