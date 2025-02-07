@@ -13,6 +13,9 @@ const payBtn = document.getElementById("pay-btn");
 const store = "wallet";
 let walletConnected = false;
 
+const savedWallet = localStorage.getItem(store);
+tg.showAlert(savedWallet);
+
 // 🌟 Force recheck on page load
 async function loadWallet() {
   try {
@@ -63,7 +66,7 @@ connectBtn.addEventListener("click", async () => {
 
   try {
     if (!walletConnected) {
-      await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
+      //await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
       const walletInfo = await tonConnectUI.connectWallet();
       if (!walletInfo || !walletInfo.account)
         throw new Error("Wallet connection failed.");
