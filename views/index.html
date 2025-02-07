@@ -1,46 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Talk with people and make new friends" />
     <meta name="keywords" content="vebbo, vebbo.me, chat, video chat, video" />
     <meta name="author" content="Vebbo inc." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/media.css" />
     <link rel="icon" type="image/png" href="./assets/icon-web.png" />
     <title>Vebbo | Connect with people</title>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        text-align: center;
-        padding: 20px;
-        background-color: #f9f9f9;
-      }
-      button {
-        padding: 10px 20px;
-        font-size: 16px;
-        margin-top: 10px;
-        cursor: pointer;
-      }
-      #wallet-address {
-        display: block;
-        margin: 15px 0;
-        font-weight: bold;
-      }
-    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <h2>TON Payment</h2>
+    <div class="container">
+      <div class="top-section">
+        <video id="remote-video" class="video" autoplay muted></video>
+        <img src="./assets/icon.png" alt="Vebbo Icon" class="app-icon" />
+        <div class="loader"></div>
+        <div class="online-container">
+          <span>online</span>
+          <label class="count">1,200</label>
+        </div>
+      </div>
 
-    <button id="connect-btn">Connect Wallet</button>
-    <label id="wallet-address">Wallet Address: Not connected</label>
+      <div class="note-section">
+        <marquee
+          class="note-content"
+          scrolldelay="100"
+          behavior="scroll"
+          direction="left"
+          >Ad space. Drop a note here 👉🏻 Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Libero, necessitatibus?
+        </marquee>
+        <button id="note-btn" class="btn">Ad</button>
+      </div>
 
-    <h2>Pay 0.1 TON to Post Note</h2>
-    <button id="pay-btn" disabled>Pay 0.1 TON</button>
-
+      <div class="bottom-section">
+        <div class="left-bottom">
+          <div class="video-local">
+            <video id="local-video" class="video" autoplay></video>
+          </div>
+          <div class="buttons">
+            <button id="start-stop" class="btn">Start</button>
+            <button id="next" class="btn">Next</button>
+          </div>
+        </div>
+        <div class="right-bottom">
+          <ul class="chat-list">
+            <li>
+              <span class="you">You: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              <span class="other">User: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              <span class="you">You: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              <span class="other">User: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              <span class="you">You: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+            <li>
+              <span class="other">User: </span>
+              <p class="msg">Lorem ipsum dolor sit amet.</p>
+            </li>
+          </ul>
+          <div class="chat-section">
+            <input
+              type="text"
+              class="chat-field"
+              autocomplete="off"
+              placeholder="Write..."
+            />
+            <img src="./assets/send.png" alt="send" class="send-btn" />
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./js/main.js"></script>
   </body>
 </html>
