@@ -76,7 +76,7 @@ if (window.innerWidth <= 1024) {
     const peer = new Peer(socket.id, {
       host: isLocal ? "localhost" : url,
       port: isLocal ? 3000 : 433,
-      path: "/",
+      path: "/peerjs",
       secure: !isLocal,
       debug: 3,
     });
