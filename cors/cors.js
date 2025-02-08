@@ -1,6 +1,6 @@
 import cors from "cors";
 
-const corsHeader = {
+const corsObj = {
   origin: "*",
   methods: ["GET", "PUT", "POST", "DELETE"],
   allowedHeaders: [
@@ -17,4 +17,5 @@ const corsHeader = {
   optionsSuccessStatus: 200,
 };
 
-export const corsPayload = cors(corsHeader);
+export const corsHeader = corsObj;
+export const corsPayload = cors(corsObj);

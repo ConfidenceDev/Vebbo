@@ -137,6 +137,10 @@
 .popup .walletLabel {
   align-self: center;
   margin-top: 8px;
+  display: block;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .popup hr {
