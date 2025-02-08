@@ -18,11 +18,11 @@ navigator.getUserMedia(constraints, onsuccess, onerror);
 function onsuccess(stream) {
   window.stream = stream;
   localVideo.srcObject = stream;
-  remoteVideo.srcObject = stream;
+  /*remoteVideo.srcObject = stream;
 
   remoteVideo.addEventListener("loadedmetadata", () => {
     remoteVideo.play();
-  });
+  });*/
 
   localVideo.addEventListener("loadedmetadata", () => {
     localVideo.play();
