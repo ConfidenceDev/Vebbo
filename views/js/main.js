@@ -34,6 +34,7 @@ if (window.innerWidth <= 1024) {
   const store = "wallet";
   let walletConnected = false;
   startStopBtn.disabled = true;
+  chatField.disabled = true;
   nextBtn.disabled = true;
   let remoteId = null;
   let call = null;
@@ -304,6 +305,8 @@ if (window.innerWidth <= 1024) {
         // Send my stream
         call = peer.call(remoteId, window.stream);
 
+        console.log(peer);
+        console.log(call);
         // Get remote stream
         call.on("stream", (remoteStream) => {
           remoteVideo.srcObject = remoteStream;
