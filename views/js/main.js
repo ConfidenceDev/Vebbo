@@ -33,9 +33,11 @@ if (window.innerWidth <= 1024) {
 
   const store = "wallet";
   let walletConnected = false;
-  startStopBtn.disabled = true;
   chatField.disabled = true;
-  nextBtn.disabled = true;
+  startStopBtn.style = "opacity: .4;";
+  startStopBtn.style.pointerEvents = "none";
+  nextBtn.style = "opacity: .4;";
+  nextBtn.style.pointerEvents = "none";
   let remoteId = null;
   let call = null;
 
@@ -82,7 +84,8 @@ if (window.innerWidth <= 1024) {
 
     peer.on("open", (id) => {
       console.log(id);
-      startStopBtn.disabled = false;
+      startStopBtn.style = "opacity: 1;";
+      startStopBtn.style.pointerEvents = "auto";
     });
 
     socket.on("note", (data) => {
