@@ -74,8 +74,8 @@ if (window.innerWidth <= 1024) {
 
   socket.on("connect", () => {
     const peer = new Peer(socket.id, {
-      host: isLocal ? "localhost" : url,
-      port: isLocal ? 3000 : 433,
+      host: isLocal ? "localhost" : "vebbo.onrender.com",
+      port: isLocal ? 3000 : 443,
       path: "/peerjs",
       secure: !isLocal,
       debug: 3,
