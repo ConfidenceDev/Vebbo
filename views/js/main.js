@@ -64,6 +64,7 @@ if (window.innerWidth <= 1024) {
     window.stream = stream;
     localVideo.srcObject = stream;
 
+    console.log(window.stream);
     localVideo.addEventListener("loadedmetadata", () => {
       localVideo.play();
     });
@@ -73,9 +74,17 @@ if (window.innerWidth <= 1024) {
   }
 
   socket.on("connect", () => {
+    let port = 433;
+
+    socket.on("port", (data) => {
+      port = data;
+      console.log("A: " + port);
+    });
+
+    console.log("B: " + port);
     const peer = new Peer(socket.id, {
       host: isLocal ? "localhost" : url,
-      port: isLocal ? 3000 : 443,
+      port: isLocal ? 3000 : port,
       path: "/peerjs",
       secure: !isLocal,
     });

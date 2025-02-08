@@ -81,6 +81,7 @@ app.post("/note", async (req, res) => {
 
 // ===================== PEER ==================================
 io.on("connection", (socket) => {
+  socket.emit("port", PORT);
   let count = io.sockets.server.engine.clientsCount;
   io.emit("online", count);
   socket.emit("note", getNote());
