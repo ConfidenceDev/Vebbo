@@ -59,7 +59,7 @@ if (window.innerWidth <= 1024) {
     navigator.mozGetUserMedia ||
     navigator.msGetUserMedia;
 
-  navigator.mediaDevices.getUserMedia(constraints, onsuccess, onerror);
+  stream(constraints, onsuccess, onerror);
   function onsuccess(stream) {
     window.stream = stream;
     localVideo.srcObject = stream;
@@ -73,8 +73,6 @@ if (window.innerWidth <= 1024) {
   }
 
   socket.on("connect", () => {
-    console.log(isLocal);
-
     const peer = new Peer(socket.id, {
       host: isLocal ? "localhost" : url,
       port: isLocal ? 3000 : 443,
@@ -307,6 +305,7 @@ if (window.innerWidth <= 1024) {
         // Send my stream
         call = peer.call(remoteId, window.stream);
 
+        console.log(window.stream);
         console.log(peer);
         console.log(call);
         // Get remote stream
