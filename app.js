@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
 
-const PORT = process.env.PORT || 3000; //443;
+const PORT = process.env.PORT || 443;
 const MY_TON_WALLET = process.env.WALLET;
 const bot = new Telegraf(process.env.BOT);
 const webAppUrl = "t.me/vebbo_bot/vebbo";
