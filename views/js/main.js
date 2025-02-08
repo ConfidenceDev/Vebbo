@@ -73,293 +73,286 @@ if (window.innerWidth <= 1024) {
   }
 
   socket.on("connect", () => {
-    let port = 433;
+    const peer = new Peer(socket.id, {
+      host: isLocal ? "localhost" : url,
+      port: isLocal ? 3000 : 433,
+      path: "/peerjs",
+      secure: !isLocal,
+    });
 
-    socket.on("port", (data) => {
-      port = data;
+    peer.on("open", (id) => {
+      console.log("HEEEEEEEERRRRRRRRRRREEEEEEEEEE");
+      console.log(id);
+      startStopBtn.disabled = false;
+    });
 
-      const peer = new Peer(socket.id, {
-        host: isLocal ? "localhost" : url,
-        port: isLocal ? 3000 : port,
-        path: "/peerjs",
-        secure: !isLocal,
-      });
+    socket.on("note", (data) => {
+      noteContent.innerText = data;
+    });
 
-      peer.on("open", (id) => {
-        console.log(id);
-        startStopBtn.disabled = false;
-      });
+    socket.on("online", (data) => {
+      onlineCount.innerText = toComma(data);
+    });
 
-      socket.on("note", (data) => {
-        noteContent.innerText = data;
-      });
-
-      socket.on("online", (data) => {
-        onlineCount.innerText = toComma(data);
-      });
-
-      async function loadWallet() {
-        try {
-          const savedWallet = localStorage.getItem(store);
-          if (savedWallet) {
-            walletLabel.innerText = `Wallet: ${formatWalletAddress(
-              savedWallet
-            )}`;
-            walletConnected = true;
-            walletBtn.innerText = "Publish | 0.1 Ton";
-          } else {
-            resetWalletUI();
-          }
-        } catch (error) {
-          console.error("Wallet Load Error:", error);
+    async function loadWallet() {
+      try {
+        const savedWallet = localStorage.getItem(store);
+        if (savedWallet) {
+          walletLabel.innerText = `Wallet: ${formatWalletAddress(savedWallet)}`;
+          walletConnected = true;
+          walletBtn.innerText = "Publish | 0.1 Ton";
+        } else {
           resetWalletUI();
         }
+      } catch (error) {
+        console.error("Wallet Load Error:", error);
+        resetWalletUI();
       }
+    }
 
-      function resetWalletUI() {
-        walletLabel.innerText = "Wallet: Not connected";
-        localStorage.removeItem(store);
-        walletBtn.innerText = "Connect Wallet";
-        walletConnected = false;
-      }
+    function resetWalletUI() {
+      walletLabel.innerText = "Wallet: Not connected";
+      localStorage.removeItem(store);
+      walletBtn.innerText = "Connect Wallet";
+      walletConnected = false;
+    }
 
-      noteField.addEventListener("input", (e) => {
-        const target = e.currentTarget;
-        const currentLength = target.value.length;
-        noteCount.innerText = `${currentLength}/1024`;
-      });
+    noteField.addEventListener("input", (e) => {
+      const target = e.currentTarget;
+      const currentLength = target.value.length;
+      noteCount.innerText = `${currentLength}/1024`;
+    });
 
-      walletBtn.addEventListener("click", async (e) => {
-        e.preventDefault();
-        walletBtn.disabled = true;
-        try {
-          if (!walletConnected) {
-            if (localStorage.getItem(store)) await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
-            const walletInfo = await tonConnectUI.connectWallet();
-            if (!walletInfo || !walletInfo.account) {
-              walletBtn.disabled = false;
-              throw new Error("Wallet connection failed.");
-            }
+    walletBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+      walletBtn.disabled = true;
+      try {
+        if (!walletConnected) {
+          if (localStorage.getItem(store)) await tonConnectUI.disconnect(); // 🔄 Ensure clean state before reconnecting
+          const walletInfo = await tonConnectUI.connectWallet();
+          if (!walletInfo || !walletInfo.account) {
+            walletBtn.disabled = false;
+            throw new Error("Wallet connection failed.");
+          }
 
-            const address = walletInfo.account.address;
-            const response = await fetch(`${url}/toWallet`, {
+          const address = walletInfo.account.address;
+          const response = await fetch(`${url}/toWallet`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ address }),
+          });
+
+          const data = await response.json();
+          walletLabel.innerText = `Wallet: ${formatWalletAddress(
+            data.wallet
+          )}}`;
+          walletConnected = true;
+          localStorage.setItem(store, data.wallet);
+          walletBtn.innerText = "Publish | 0.1 Ton";
+          walletBtn.disabled = false;
+        } else {
+          walletLabel.addEventListener("click", async () => {
+            await tonConnectUI.disconnect();
+            resetWalletUI();
+          });
+
+          const noteText = noteField.value;
+          if (!noteText || noteText.value == "") {
+            tg.showAlert("Write a note");
+            return;
+          }
+
+          const response = await fetch(`${url}/notepay`);
+          const data = await response.json();
+          if (data) {
+            await tonConnectUI.sendTransaction(data.obj);
+            const response = await fetch(`${url}/note`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ address }),
+              body: JSON.stringify({ noteText }),
             });
 
-            const data = await response.json();
-            walletLabel.innerText = `Wallet: ${formatWalletAddress(
-              data.wallet
-            )}}`;
-            walletConnected = true;
-            localStorage.setItem(store, data.wallet);
-            walletBtn.innerText = "Publish | 0.1 Ton";
-            walletBtn.disabled = false;
-          } else {
-            walletLabel.addEventListener("click", async () => {
-              await tonConnectUI.disconnect();
-              resetWalletUI();
-            });
-
-            const noteText = noteField.value;
-            if (!noteText || noteText.value == "") {
-              tg.showAlert("Write a note");
-              return;
-            }
-
-            const response = await fetch(`${url}/notepay`);
-            const data = await response.json();
-            if (data) {
-              await tonConnectUI.sendTransaction(data.obj);
-              const response = await fetch(`${url}/note`, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ noteText }),
-              });
-
-              await response.json();
-              noteField.value = null;
-              noteCount.innerText = "0/1024";
-              socket.emit("note");
-              loadModal("");
-              tg.showAlert("Note published ✅");
-            }
-            walletBtn.disabled = false;
+            await response.json();
+            noteField.value = null;
+            noteCount.innerText = "0/1024";
+            socket.emit("note");
+            loadModal("");
+            tg.showAlert("Note published ✅");
           }
-        } catch (error) {
           walletBtn.disabled = false;
-          console.error("Wallet Connection Error:", error);
-          tg.showAlert(error);
-          resetWalletUI();
         }
-      });
+      } catch (error) {
+        walletBtn.disabled = false;
+        console.error("Wallet Connection Error:", error);
+        tg.showAlert(error);
+        resetWalletUI();
+      }
+    });
 
-      reportBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadModal("popup_report");
-      });
+    reportBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadModal("popup_report");
+    });
 
-      noteBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        loadWallet();
-        loadModal("popup_note");
-      });
+    noteBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      loadWallet();
+      loadModal("popup_note");
+    });
 
-      socket.on("chat", (data) => {
-        let li = document.createElement("li");
-        addChat(data, li);
-        chatList.scrollTop = chatList.scrollHeight;
-      });
+    socket.on("chat", (data) => {
+      let li = document.createElement("li");
+      addChat(data, li);
+      chatList.scrollTop = chatList.scrollHeight;
+    });
 
-      function addChat(data, li) {
-        if (data.msg !== null) {
-          if (data.userId !== socket.id) {
-            li.innerHTML = `
+    function addChat(data, li) {
+      if (data.msg !== null) {
+        if (data.userId !== socket.id) {
+          li.innerHTML = `
                   <p class="msg"><span class="other">User: </span>${data.msg}</p>`;
-          } else {
-            li.innerHTML = `
-                  <p class="msg"><span class="you">You: </span>${data.msg}</p>`;
-          }
-
-          chatList.appendChild(li);
-        }
-      }
-
-      sendBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (chatField.value !== null && chatField.value !== "") {
-          const doc = {
-            remoteId: remoteId,
-            userId: socket.id,
-            msg: chatField.value,
-          };
-
-          socket.emit("chat", doc);
-          chatField.value = null;
-        }
-      });
-
-      chatField.addEventListener("keyup", (e) => {
-        if (e.key === "Enter" || e.keyCode === 13) {
-          e.preventDefault();
-          sendBtn.click();
-        }
-      });
-
-      startStopBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (startStopBtn.innerText === "Start") {
-          loadPeer();
-          chatField.innerHTML = "";
-          nextBtn.disabled = false;
-          startStopBtn.innerText = "Stop";
         } else {
-          leavePeer();
-          removePeer();
-          stopStream();
-          nextBtn.disabled = true;
-          chatField.innerHTML = "";
-          loader.style = "display: none;";
-          onlineContainer.style = "display: flex;";
-          chatField.disabled = true;
-          startStopBtn.innerText = "Start";
+          li.innerHTML = `
+                  <p class="msg"><span class="you">You: </span>${data.msg}</p>`;
         }
-      });
 
-      nextBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        leavePeer();
-        toNext();
-      });
-
-      socket.on("leave", () => {
-        toNext();
-      });
-
-      function toNext() {
-        chatList.innerHTML = "";
-        chatField.disabled = true;
-        stopStream();
-        loadPeer();
+        chatList.appendChild(li);
       }
+    }
 
-      function loadPeer() {
-        onlineContainer.style = "display: none;";
-        loader.style = "display: flex;";
-        const doc = {
-          userId: socket.id,
-        };
-        socket.emit("peer", doc);
-      }
-
-      function removePeer() {
-        const doc = {
-          userId: socket.id,
-        };
-        socket.emit("remove", doc);
-      }
-
-      socket.on("found", (data) => {
-        if (data !== socket.id) {
-          loader.style = "display: none;";
-          chatField.disabled = false;
-          sendBtn.style = "opacity: 1;";
-          sendBtn.style.pointerEvents = "auto";
-          remoteId = data.userId;
-
-          console.log(remoteId);
-          // Send my stream
-          call = peer.call(remoteId, window.stream);
-
-          console.log(peer);
-          console.log(call);
-          // Get remote stream
-          call.on("stream", (remoteStream) => {
-            remoteVideo.srcObject = remoteStream;
-          });
-
-          // close remote stream
-          call.on("close", () => {
-            remoteVideo.srcObject = null;
-          });
-
-          // Answer Call
-          peer.on("call", (call) => {
-            call.answer(window.stream);
-            call.on("stream", (remoteStream) => {
-              remoteVideo.srcObject = remoteStream;
-            });
-          });
-        }
-      });
-
-      function stopStream() {
-        sendBtn.style = "opacity: .4;";
-        sendBtn.style.pointerEvents = "none";
-        remoteId = null;
-        if (call !== null && call !== undefined) {
-          call.close();
-          call == null;
-        }
-        if (remoteVideo.srcObject !== null && remoteVideo !== undefined) {
-          remoteVideo.srcObject = null;
-        }
-      }
-
-      function leavePeer() {
+    sendBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (chatField.value !== null && chatField.value !== "") {
         const doc = {
           remoteId: remoteId,
           userId: socket.id,
+          msg: chatField.value,
         };
-        if (remoteId !== null) socket.emit("leave", doc);
-      }
 
-      window.addEventListener("beforeunload", (event) => {
+        socket.emit("chat", doc);
+        chatField.value = null;
+      }
+    });
+
+    chatField.addEventListener("keyup", (e) => {
+      if (e.key === "Enter" || e.keyCode === 13) {
+        e.preventDefault();
+        sendBtn.click();
+      }
+    });
+
+    startStopBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (startStopBtn.innerText === "Start") {
+        loadPeer();
+        chatField.innerHTML = "";
+        nextBtn.disabled = false;
+        startStopBtn.innerText = "Stop";
+      } else {
         leavePeer();
+        removePeer();
         stopStream();
-        socket.disconnect();
-      });
+        nextBtn.disabled = true;
+        chatField.innerHTML = "";
+        loader.style = "display: none;";
+        onlineContainer.style = "display: flex;";
+        chatField.disabled = true;
+        startStopBtn.innerText = "Start";
+      }
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      leavePeer();
+      toNext();
+    });
+
+    socket.on("leave", () => {
+      toNext();
+    });
+
+    function toNext() {
+      chatList.innerHTML = "";
+      chatField.disabled = true;
+      stopStream();
+      loadPeer();
+    }
+
+    function loadPeer() {
+      onlineContainer.style = "display: none;";
+      loader.style = "display: flex;";
+      const doc = {
+        userId: socket.id,
+      };
+      socket.emit("peer", doc);
+    }
+
+    function removePeer() {
+      const doc = {
+        userId: socket.id,
+      };
+      socket.emit("remove", doc);
+    }
+
+    socket.on("found", (data) => {
+      if (data !== socket.id) {
+        loader.style = "display: none;";
+        chatField.disabled = false;
+        sendBtn.style = "opacity: 1;";
+        sendBtn.style.pointerEvents = "auto";
+        remoteId = data.userId;
+
+        console.log(remoteId);
+        // Send my stream
+        call = peer.call(remoteId, window.stream);
+
+        console.log(peer);
+        console.log(call);
+        // Get remote stream
+        call.on("stream", (remoteStream) => {
+          remoteVideo.srcObject = remoteStream;
+        });
+
+        // close remote stream
+        call.on("close", () => {
+          remoteVideo.srcObject = null;
+        });
+
+        // Answer Call
+        peer.on("call", (call) => {
+          call.answer(window.stream);
+          call.on("stream", (remoteStream) => {
+            remoteVideo.srcObject = remoteStream;
+          });
+        });
+      }
+    });
+
+    function stopStream() {
+      sendBtn.style = "opacity: .4;";
+      sendBtn.style.pointerEvents = "none";
+      remoteId = null;
+      if (call !== null && call !== undefined) {
+        call.close();
+        call == null;
+      }
+      if (remoteVideo.srcObject !== null && remoteVideo !== undefined) {
+        remoteVideo.srcObject = null;
+      }
+    }
+
+    function leavePeer() {
+      const doc = {
+        remoteId: remoteId,
+        userId: socket.id,
+      };
+      if (remoteId !== null) socket.emit("leave", doc);
+    }
+
+    window.addEventListener("beforeunload", (event) => {
+      leavePeer();
+      stopStream();
+      socket.disconnect();
     });
   });
 
