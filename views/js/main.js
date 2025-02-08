@@ -78,11 +78,9 @@ if (window.innerWidth <= 1024) {
       port: isLocal ? 3000 : 443,
       path: "/peerjs",
       secure: !isLocal,
-      debug: 3,
     });
 
     peer.on("open", (id) => {
-      console.log("HEEEEEEEERRRRRRRRRRREEEEEEEEEE");
       console.log(id);
       startStopBtn.disabled = false;
     });
@@ -247,13 +245,15 @@ if (window.innerWidth <= 1024) {
       if (startStopBtn.innerText === "Start") {
         loadPeer();
         chatField.innerHTML = "";
-        nextBtn.disabled = false;
+        nextBtn.style = "opacity: 1;";
+        nextBtn.style.pointerEvents = "auto";
         startStopBtn.innerText = "Stop";
       } else {
         leavePeer();
         removePeer();
         stopStream();
-        nextBtn.disabled = true;
+        nextBtn.style = "opacity: .4;";
+        nextBtn.style.pointerEvents = "none";
         chatField.innerHTML = "";
         loader.style = "display: none;";
         onlineContainer.style = "display: flex;";
@@ -307,8 +307,6 @@ if (window.innerWidth <= 1024) {
         // Send my stream
         call = peer.call(remoteId, window.stream);
 
-        console.log(peer);
-        console.log(call);
         // Get remote stream
         call.on("stream", (remoteStream) => {
           remoteVideo.srcObject = remoteStream;
