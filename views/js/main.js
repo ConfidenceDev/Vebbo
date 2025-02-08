@@ -10,7 +10,7 @@ if (window.innerWidth <= 1024) {
   });
 
   const socket = io(url);
-  const isLocal = true;
+  const isLocal = false;
 
   const okBtn = document.getElementById("ok-btn");
   const reportBtn = document.getElementById("report-btn");
