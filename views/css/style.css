@@ -14,8 +14,17 @@
 }
 
 :root {
-  --bg-color: #212121;
+  --primary-color: #4070f4;
+  --secondary-color: #262938;
+  --secondary-light: #3e6981;
+  --secondary-hover: #385361;
+  --accent-color: #6b394c;
   --grey: #ccc;
+  --grey2: #616161;
+  --light-grey: #888888;
+  --secondary-grey: #555555;
+  --dark-grey: #1b1b1b;
+  --box: rgba(0, 0, 0, 0.5);
   --chat: #f4f4f4;
 }
 
@@ -24,13 +33,18 @@ html {
   height: 100%;
   width: 100%;
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
+  background-color: var(--secondary-color);
+  position: relative;
 }
 
 .container {
   height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.lg-screen {
+  display: none;
 }
 
 ul {
@@ -52,6 +66,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background-color: var(--dark-grey);
 }
 
 #local-video {
@@ -64,6 +79,20 @@ ul {
   left: 8px;
   width: 32px;
   height: 32px;
+}
+
+.report-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+}
+
+.report-icon:hover {
+  opacity: 0.5;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
 }
 
 .loader {
@@ -228,6 +257,20 @@ li .other {
   cursor: pointer;
 }
 
+.btn {
+  background-color: var(--grey2);
+  border-radius: 8px;
+  color: white;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+
+.btn:hover {
+  opacity: 0.5;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+
 hr {
   height: 1px;
   margin: 4px 0;
@@ -248,4 +291,79 @@ hr {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.policy {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 50px 20px;
+  color: white;
+}
+
+.policy h1 {
+  margin: 30px 0 10px 0;
+}
+
+.policy .google_policy:hover {
+  transform: scale(1.06);
+  opacity: 0.9;
+  transition: transform 0.2s ease-in;
+}
+
+.policy span {
+  font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: none;
+  }
+
+  .lg-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+    color: white;
+    position: relative;
+  }
+
+  .lg-screen .app-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .lg-screen a {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 32px;
+    font-size: 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    outline: none;
+  }
+
+  .lg-screen a:hover {
+    opacity: 0.5;
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+  }
+
+  .lg-screen p {
+    margin-top: 16px;
+    font-size: 1.5rem;
+  }
+
+  .lg-screen label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
 }

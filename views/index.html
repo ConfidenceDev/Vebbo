@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cupcake">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,22 +12,18 @@
     />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <link rel="stylesheet" type="text/css" href="./css/media.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
     <link rel="icon" type="image/png" href="./assets/icon-web.png" />
     <title>Vebbo | Connect with people</title>
     <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
     <script src="https://unpkg.com/@tonconnect/ui@latest/dist/tonconnect-ui.min.js"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <div class="container">
       <div class="top-section">
         <video id="remote-video" class="video" autoplay muted></video>
         <img src="./assets/icon.png" alt="Vebbo Icon" class="app-icon" />
+        <img src="./assets/flag.png" alt="Report Icon" class="report-icon" />
         <div class="loader"></div>
         <div class="online-container">
           <span>online</span>
@@ -44,7 +40,7 @@
           >Ad space. Drop a note here 👉🏻 Lorem ipsum dolor sit amet consectetur,
           adipisicing elit. Libero, necessitatibus?
         </marquee>
-        <button id="note-btn" class="btn">Ad</button>
+        <label id="note-btn" class="btn">Ad</label>
       </div>
 
       <div class="bottom-section">
@@ -53,8 +49,8 @@
             <video id="local-video" class="video" autoplay></video>
           </div>
           <div class="buttons">
-            <button id="start-stop" class="btn">Start</button>
-            <button id="next" class="btn">Next</button>
+            <label id="start-stop" class="btn">Start</label>
+            <label id="next" class="btn">Next</label>
           </div>
         </div>
         <div class="right-bottom">
@@ -79,6 +75,68 @@
           </div>
         </div>
       </div>
+
+      <div id="popup_start" class="popup_msg overlay">
+        <div class="popup">
+          <h2>Meet new people</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="details">
+            <p class="pop_msg">
+              You will need to enable camera and microphone permissions when
+              prompted.
+              <br />
+              <br />
+              <br />
+              <span
+                >By clicking 'OK' you agree to our
+                <a href="https://vebbo.onrender.com/policy.html" target="_blank"
+                  >terms and policy</a
+                ></span
+              >
+            </p>
+            <label class="popup_buttons">OK</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="popup_report" class="popup_msg overlay">
+        <div class="popup">
+          <h2></h2>
+          <a class="close" href="#">&times;</a>
+          <div class="details">
+            <p class="pop_msg">Report this user</p>
+            <button class="popup_buttons">Report</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="popup_note" class="popup_msg overlay">
+        <div class="popup">
+          <h2>Drop a Note</h2>
+          <a class="close" href="#">&times;</a>
+          <div class="details">
+            <textarea
+              type="text"
+              rows="4"
+              id="note-field"
+              placeholder="Type your note..."
+              maxlength="1023"
+            ></textarea>
+            <label id="note-count">0/1023</label>
+            <hr />
+            <label id="walletLabel">Wallet: Not Connected</label>
+            <button class="wallet-btn popup_buttons" onclick="connectWallet()">
+              Connect Wallet
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lg-screen">
+      <img src="./assets/icon.png" alt="Vebbo Icon" class="app-icon" />
+      <a href="https://t.me/vebbo_bot">Open app in Telegram</a>
+      <p>Hello there, Vebbo is currently only available on Telegram</p>
+      <label>Vebbo &copy; 2025. copyright all rights reserved</label>
     </div>
     <script src="./js/main.js"></script>
   </body>
