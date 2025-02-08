@@ -259,6 +259,7 @@ if (window.innerWidth <= 1024) {
         onlineContainer.style = "display: flex;";
         chatField.disabled = true;
         startStopBtn.innerText = "Start";
+        startStopBtn.style = "opacity: 1;";
       }
     });
 

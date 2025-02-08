@@ -25,8 +25,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "views")));
 
-const PORT = process.env.PORT || 443;
+const PORT = process.env.PORT || 3000; //443;
 const MY_TON_WALLET = process.env.WALLET;
+const bot = new Telegraf(process.env.BOT);
+const webAppUrl = "t.me/vebbo_bot/vebbo";
 
 const options = {
   debug: true,
@@ -78,6 +80,49 @@ app.post("/note", async (req, res) => {
     console.log(error);
   }
 });
+
+const startButton = {
+  reply_markup: {
+    inline_keyboard: [
+      [
+        {
+          text: "Join",
+          url: webAppUrl,
+        },
+      ],
+      [{ text: "Contact Us", callback_data: "contact" }],
+    ],
+  },
+};
+
+// Respond to the /start command and show the inline buttons
+bot.start((ctx) => {
+  ctx.reply(
+    `Welcome to vebbo. Video chat with people and make new friends.
+🤳📱🎦🚀
+
+All on Telegram`,
+    startButton
+  );
+});
+
+// Handle the "start" button click
+bot.on("callback_query", async (ctx) => {
+  const callbackData = ctx.callbackQuery.data;
+  if (callbackData === "contact") {
+    ctx.reply("Coming soon!");
+  }
+});
+
+// Start the bot
+bot
+  .launch()
+  .then(() => {
+    console.log("Bot is running 🚀");
+  })
+  .catch((err) => {
+    console.error("Error launching bot:", err);
+  });
 
 // ===================== PEER ==================================
 io.on("connection", (socket) => {
