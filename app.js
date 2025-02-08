@@ -36,7 +36,7 @@ const options = {
 };
 app.use("/peerjs", ExpressPeerServer(server, options));
 
-app.get("/", (req, res) => {
+app.get(["/", ""], (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
