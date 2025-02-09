@@ -18,7 +18,6 @@ export function setNote(note) {
 }
 
 export async function fetchPeer(data) {
-  console.log(data);
   try {
     return new Promise(async (resolve, reject) => {
       if (Peer.length < 1) {
@@ -37,8 +36,6 @@ export async function fetchPeer(data) {
       let peer = null;
       if (index !== -1) {
         [peer] = Peer.splice(index, 1);
-
-        console.log(peer);
         resolve(peer);
         return;
       }

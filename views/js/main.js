@@ -12,7 +12,6 @@ if (window.innerWidth <= 1024) {
   const socket = io(url);
   const isLocal = false;
 
-  const appIconBtn = document.querySelector(".app-icon");
   const okBtn = document.getElementById("ok-btn");
   const reportBtn = document.getElementById("report-btn");
   const sendReportBtn = document.getElementById("send-report");
@@ -258,7 +257,6 @@ if (window.innerWidth <= 1024) {
       e.preventDefault();
       if (startStopBtn.innerText === "Start") {
         loadPeer();
-        chatField.innerHTML = "";
         nextBtn.style = "opacity: 1;";
         nextBtn.style.pointerEvents = "auto";
         startStopBtn.innerText = "Stop";
@@ -268,13 +266,13 @@ if (window.innerWidth <= 1024) {
         stopStream();
         nextBtn.style = "opacity: .4;";
         nextBtn.style.pointerEvents = "none";
-        chatField.innerHTML = "";
         loader.style = "display: none;";
         onlineContainer.style = "display: flex;";
         chatField.disabled = true;
         startStopBtn.innerText = "Start";
         startStopBtn.style = "opacity: 1;";
       }
+      chatField.innerHTML = "";
       reportBtn.style = "opacity: .4;";
       reportBtn.style.pointerEvents = "none";
     });
@@ -347,14 +345,6 @@ if (window.innerWidth <= 1024) {
 
         reportBtn.style = "opacity: 1;";
         reportBtn.style.pointerEvents = "auto";
-        //=====To remove ===
-        appIconBtn.addEventListener("click", () => {
-          console.log("Reported: " + data.teleId);
-          delete flags[data.teleId];
-          localStorage.setItem("flags", JSON.stringify(flags));
-          //tg.showAlert("Reported: " + data.teleId);
-        });
-
         reportBtn.addEventListener("click", () => {
           loadModal("popup_report");
         });

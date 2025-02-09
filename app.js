@@ -2,6 +2,7 @@ import "dotenv/config";
 import path from "path";
 import { createServer } from "http";
 import { fileURLToPath } from "url";
+import crypto from "crypto";
 import express from "express";
 import { corsHeader, corsPayload } from "./cors/cors.js";
 import { Address } from "@ton/core";
@@ -126,13 +127,13 @@ bot
     console.error("Error launching bot:", err);
   });
 
-function tI() {
-  return Math.random().toString(36).substring(2, 10);
+function genTeleId() {
+  return crypto.randomUUID();
 }
 // ===================== PEER ==================================
 io.on("connection", (socket) => {
-  //if (teleId !== null) socket.emit("start", teleId);
-  socket.emit("start", tI());
+  if (teleId !== null) socket.emit("start", teleId);
+  else socket.emit("start", genTeleId());
   let count = io.sockets.server.engine.clientsCount;
   io.emit("online", count);
   socket.emit("note", getNote());
