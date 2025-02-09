@@ -65,6 +65,7 @@ if (window.innerWidth <= 1024) {
     navigator.mozGetUserMedia ||
     navigator.msGetUserMedia;
 
+  //navigator.mediaDevices.getUserMedia
   stream(constraints, onsuccess, onerror);
   function onsuccess(stream) {
     window.stream = stream;
@@ -328,6 +329,8 @@ if (window.innerWidth <= 1024) {
         // Get remote stream
         call.on("stream", (remoteStream) => {
           remoteVideo.srcObject = remoteStream;
+          remoteVideo.setAttribute("playsinline", "");
+          remoteVideo.setAttribute("autoplay", "");
         });
 
         // close remote stream
@@ -340,6 +343,8 @@ if (window.innerWidth <= 1024) {
           call.answer(window.stream);
           call.on("stream", (remoteStream) => {
             remoteVideo.srcObject = remoteStream;
+            remoteVideo.setAttribute("playsinline", "");
+            remoteVideo.setAttribute("autoplay", "");
           });
         });
 
