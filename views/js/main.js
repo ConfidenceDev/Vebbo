@@ -264,6 +264,7 @@ if (window.innerWidth <= 1024) {
         leavePeer();
         removePeer();
         stopStream();
+        chatField.innerHTML = "";
         nextBtn.style = "opacity: .4;";
         nextBtn.style.pointerEvents = "none";
         loader.style = "display: none;";
@@ -272,7 +273,6 @@ if (window.innerWidth <= 1024) {
         startStopBtn.innerText = "Start";
         startStopBtn.style = "opacity: 1;";
       }
-      chatField.innerHTML = "";
       reportBtn.style = "opacity: .4;";
       reportBtn.style.pointerEvents = "none";
     });
