@@ -18,19 +18,28 @@ export function setNote(note) {
 }
 
 export async function fetchPeer(data) {
+  console.log(data);
   try {
     return new Promise(async (resolve, reject) => {
       if (Peer.length < 1) {
-        const { userId } = data;
-        Peer.push(userId);
+        const { teleId, userId } = data;
+        const doc = {
+          teleId,
+          userId,
+        };
+        Peer.push(doc);
         reject("No match");
         return;
       }
 
-      if (Peer[0] !== data.userId) {
-        const top = Peer[0];
-        Peer.shift();
-        resolve(top);
+      const index = Peer.findIndex((user) => !(user.teleId in data.flags));
+
+      let peer = null;
+      if (index !== -1) {
+        [peer] = Peer.splice(index, 1);
+
+        console.log(peer);
+        resolve(peer);
         return;
       }
     });

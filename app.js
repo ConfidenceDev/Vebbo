@@ -29,6 +29,7 @@ const PORT = process.env.PORT || 443;
 const MY_TON_WALLET = process.env.WALLET;
 const bot = new Telegraf(process.env.BOT);
 const webAppUrl = "t.me/vebbo_bot/vebbo";
+let teleId = null;
 
 const options = {
   debug: true,
@@ -97,6 +98,7 @@ const startButton = {
 
 // Respond to the /start command and show the inline buttons
 bot.start((ctx) => {
+  teleId = ctx.from.id;
   ctx.reply(
     `Welcome to vebbo. Video chat with people and make new friends.
 🤳📱🎦🚀
@@ -124,9 +126,13 @@ bot
     console.error("Error launching bot:", err);
   });
 
+function tI() {
+  return Math.random().toString(36).substring(2, 10);
+}
 // ===================== PEER ==================================
 io.on("connection", (socket) => {
-  socket.emit("port", PORT);
+  //if (teleId !== null) socket.emit("start", teleId);
+  socket.emit("start", tI());
   let count = io.sockets.server.engine.clientsCount;
   io.emit("online", count);
   socket.emit("note", getNote());
@@ -139,11 +145,13 @@ io.on("connection", (socket) => {
   socket.on("peer", (data) => {
     fetchPeer(data)
       .then((result) => {
-        const doc = {
-          userId: result,
+        const { teleId, userId } = data;
+        const obj = {
+          teleId,
+          userId,
         };
-        socket.emit("found", doc);
-        socket.broadcast.to(result).emit("found", data);
+        socket.emit("found", result);
+        socket.broadcast.to(result.userId).emit("found", obj);
       })
       .catch((err) => {
         //console.log(err);
@@ -153,6 +161,11 @@ io.on("connection", (socket) => {
   //============= Remove =================
   socket.on("remove", async (data) => {
     await removePeer(data);
+  });
+
+  //============= Flag =================
+  socket.on("flag", async (data) => {
+    socket.broadcast.to(data.userId).emit("flagged", data);
   });
 
   //============= Chat =================

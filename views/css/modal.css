@@ -100,6 +100,29 @@
   margin-top: 12px;
 }
 
+.connection-container {
+  display: flex;
+  flex-direction: row;
+  margin: 8px;
+  padding-right: 8px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.connection-container img {
+  width: 24px;
+  height: 24px;
+  margin-right: 16px;
+  display: none;
+}
+
+.connection-container img:hover {
+  opacity: 0.5;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
+
 .popup_buttons {
   width: 100%;
   display: inline-block;
@@ -112,7 +135,7 @@
   font-size: 1.2rem;
   border-radius: 16px;
   box-sizing: border-box;
-  margin: 25px 0 10px 0;
+  margin: 8px 8px 8px 0;
 }
 
 .popup_buttons:hover {

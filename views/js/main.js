@@ -12,8 +12,10 @@ if (window.innerWidth <= 1024) {
   const socket = io(url);
   const isLocal = false;
 
+  const appIconBtn = document.querySelector(".app-icon");
   const okBtn = document.getElementById("ok-btn");
   const reportBtn = document.getElementById("report-btn");
+  const sendReportBtn = document.getElementById("send-report");
   const loader = document.getElementById("loader");
   const onlineContainer = document.getElementById("online-container");
   const onlineCount = document.getElementById("online-count");
@@ -25,6 +27,7 @@ if (window.innerWidth <= 1024) {
   const noteCount = document.getElementById("note-count");
   const walletLabel = document.getElementById("walletLabel");
   const walletBtn = document.getElementById("wallet-btn");
+  const disconnectBtn = document.getElementById("disconnect");
   const chatList = document.getElementById("chat-list");
   const chatField = document.getElementById("chat-field");
   const sendBtn = document.getElementById("send-btn");
@@ -40,6 +43,8 @@ if (window.innerWidth <= 1024) {
   nextBtn.style.pointerEvents = "none";
   let remoteId = null;
   let call = null;
+  let teleId = null;
+  let flags = {};
 
   if (!localStorage.getItem("start")) {
     loadModal("popup_start");
@@ -88,6 +93,10 @@ if (window.innerWidth <= 1024) {
       startStopBtn.style.pointerEvents = "auto";
     });
 
+    socket.on("start", (data) => {
+      teleId = data;
+    });
+
     socket.on("note", (data) => {
       noteContent.innerText = data;
     });
@@ -96,13 +105,20 @@ if (window.innerWidth <= 1024) {
       onlineCount.innerText = toComma(data);
     });
 
+    socket.on("flagged", (data) => {
+      flags[data.flagger] = Date.now();
+      localStorage.setItem("flags", JSON.stringify(flags));
+    });
+
     async function loadWallet() {
       try {
         const savedWallet = localStorage.getItem(store);
+        flags = JSON.parse(localStorage.getItem("flags"));
         if (savedWallet) {
           walletLabel.innerText = `Wallet: ${formatWalletAddress(savedWallet)}`;
           walletConnected = true;
           walletBtn.innerText = "Publish | 0.1 Ton";
+          disconnectBtn.style = "display: flex;";
         } else {
           resetWalletUI();
         }
@@ -117,7 +133,13 @@ if (window.innerWidth <= 1024) {
       localStorage.removeItem(store);
       walletBtn.innerText = "Connect Wallet";
       walletConnected = false;
+      disconnectBtn.style = "display: none;";
     }
+
+    disconnectBtn.addEventListener("click", async () => {
+      await tonConnectUI.disconnect();
+      resetWalletUI();
+    });
 
     noteField.addEventListener("input", (e) => {
       const target = e.currentTarget;
@@ -145,19 +167,13 @@ if (window.innerWidth <= 1024) {
           });
 
           const data = await response.json();
-          walletLabel.innerText = `Wallet: ${formatWalletAddress(
-            data.wallet
-          )}}`;
+          walletLabel.innerText = `Wallet: ${formatWalletAddress(data.wallet)}`;
           walletConnected = true;
           localStorage.setItem(store, data.wallet);
           walletBtn.innerText = "Publish | 0.1 Ton";
           walletBtn.disabled = false;
+          disconnectBtn.style = "display: flex;";
         } else {
-          walletLabel.addEventListener("click", async () => {
-            await tonConnectUI.disconnect();
-            resetWalletUI();
-          });
-
           const noteText = noteField.value;
           if (!noteText || noteText.value == "") {
             tg.showAlert("Write a note");
@@ -189,11 +205,6 @@ if (window.innerWidth <= 1024) {
         tg.showAlert(error);
         resetWalletUI();
       }
-    });
-
-    reportBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      loadModal("popup_report");
     });
 
     noteBtn.addEventListener("click", (e) => {
@@ -264,6 +275,8 @@ if (window.innerWidth <= 1024) {
         startStopBtn.innerText = "Start";
         startStopBtn.style = "opacity: 1;";
       }
+      reportBtn.style = "opacity: .4;";
+      reportBtn.style.pointerEvents = "none";
     });
 
     nextBtn.addEventListener("click", (e) => {
@@ -287,7 +300,9 @@ if (window.innerWidth <= 1024) {
       onlineContainer.style = "display: none;";
       loader.style = "display: flex;";
       const doc = {
+        teleId: teleId,
         userId: socket.id,
+        flags: flags,
       };
       socket.emit("peer", doc);
     }
@@ -300,7 +315,7 @@ if (window.innerWidth <= 1024) {
     }
 
     socket.on("found", (data) => {
-      if (data !== socket.id) {
+      if (data.userId !== socket.id) {
         loader.style = "display: none;";
         chatField.disabled = false;
         sendBtn.style = "opacity: 1;";
@@ -308,6 +323,7 @@ if (window.innerWidth <= 1024) {
         remoteId = data.userId;
 
         console.log(remoteId);
+
         // Send my stream
         call = peer.call(remoteId, window.stream);
 
@@ -328,6 +344,33 @@ if (window.innerWidth <= 1024) {
             remoteVideo.srcObject = remoteStream;
           });
         });
+
+        reportBtn.style = "opacity: 1;";
+        reportBtn.style.pointerEvents = "auto";
+        //=====To remove ===
+        appIconBtn.addEventListener("click", () => {
+          console.log("Reported: " + data.teleId);
+          delete flags[data.teleId];
+          localStorage.setItem("flags", JSON.stringify(flags));
+          //tg.showAlert("Reported: " + data.teleId);
+        });
+
+        reportBtn.addEventListener("click", () => {
+          loadModal("popup_report");
+        });
+
+        sendReportBtn.addEventListener("click", () => {
+          flags[data.teleId] = Date.now();
+          localStorage.setItem("flags", JSON.stringify(flags));
+          const doc = {
+            userId: data.userId,
+            flagger: teleId,
+          };
+          socket.emit("flag", doc);
+          loadModal("");
+          leavePeer();
+          toNext();
+        });
       }
     });
 
@@ -345,6 +388,8 @@ if (window.innerWidth <= 1024) {
     }
 
     function leavePeer() {
+      reportBtn.style = "opacity: .4;";
+      reportBtn.style.pointerEvents = "none";
       const doc = {
         remoteId: remoteId,
         userId: socket.id,

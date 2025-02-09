@@ -107,7 +107,7 @@
           <a class="close" href="#">&times;</a>
           <div class="details">
             <p class="pop_msg">Report this user</p>
-            <button class="popup_buttons">Report</button>
+            <button id="send-report" class="popup_buttons">Report</button>
           </div>
         </div>
       </div>
@@ -129,9 +129,12 @@
             <label id="walletLabel" class="walletLabel"
               >Wallet: Not Connected</label
             >
-            <button id="wallet-btn" class="wallet-btn popup_buttons">
-              Connect Wallet
-            </button>
+            <div class="connection-container">
+              <img src="./assets/disconnect.png" id="disconnect" />
+              <button id="wallet-btn" class="wallet-btn popup_buttons">
+                Connect Wallet
+              </button>
+            </div>
           </div>
         </div>
       </div>
