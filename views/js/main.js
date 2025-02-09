@@ -397,7 +397,7 @@ if (window.innerWidth <= 1024) {
       if (remoteId !== null) socket.emit("leave", doc);
     }
 
-    window.addEventListener("beforeunload", (event) => {
+    window.addEventListener("beforeunload", () => {
       leavePeer();
       stopStream();
       socket.disconnect();
