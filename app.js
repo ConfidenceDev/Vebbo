@@ -113,7 +113,9 @@ All on Telegram`,
 bot.on("callback_query", async (ctx) => {
   const callbackData = ctx.callbackQuery.data;
   if (callbackData === "contact") {
-    ctx.reply("Coming soon!");
+    ctx.reply(`📋💼📧
+For complaints, business or feedback write to us @:
+stackdriveinc@gmail.com`);
   }
 });
 
