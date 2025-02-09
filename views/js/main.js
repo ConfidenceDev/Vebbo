@@ -65,8 +65,7 @@ if (window.innerWidth <= 1024) {
     navigator.mozGetUserMedia ||
     navigator.msGetUserMedia;
 
-  navigator.mediaDevices.getUserMedia(constraints, onsuccess, onerror);
-  //stream(constraints, onsuccess, onerror);
+  stream(constraints, onsuccess, onerror);
   function onsuccess(stream) {
     window.stream = stream;
     localVideo.srcObject = stream;
@@ -262,10 +261,10 @@ if (window.innerWidth <= 1024) {
         nextBtn.style.pointerEvents = "auto";
         startStopBtn.innerText = "Stop";
       } else {
-        chatField.innerHTML = "";
         leavePeer();
         removePeer();
         stopStream();
+        chatList.innerHTML = "";
         nextBtn.style = "opacity: .4;";
         nextBtn.style.pointerEvents = "none";
         loader.style = "display: none;";
@@ -331,6 +330,9 @@ if (window.innerWidth <= 1024) {
           remoteVideo.srcObject = remoteStream;
           remoteVideo.setAttribute("playsinline", "");
           remoteVideo.setAttribute("autoplay", "");
+          remoteVideo.addEventListener("loadedmetadata", () => {
+            remoteVideo.play();
+          });
         });
 
         // close remote stream
@@ -345,6 +347,9 @@ if (window.innerWidth <= 1024) {
             remoteVideo.srcObject = remoteStream;
             remoteVideo.setAttribute("playsinline", "");
             remoteVideo.setAttribute("autoplay", "");
+            remoteVideo.addEventListener("loadedmetadata", () => {
+              remoteVideo.play();
+            });
           });
         });
 
