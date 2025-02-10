@@ -29,7 +29,6 @@ if (!tg || !tg.initData) {
   smScreen.style = "display: none;";
   lgScreen.style = "display: flex;";
 } else {
-  const socket = io(url);
   const isLocal = false;
   const url = "https://vebbo.onrender.com";
   //const url = "http://localhost:3000";
@@ -37,6 +36,8 @@ if (!tg || !tg.initData) {
   const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: `${url}/tcm.json`,
   });
+
+  const socket = io(url);
 
   const store = "wallet";
   let walletConnected = false;
