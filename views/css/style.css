@@ -345,69 +345,68 @@ hr {
   font-weight: bold;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    display: none;
-  }
+.lg-screen {
+  max-width: 1200px;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  position: relative;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
 
-  .lg-screen {
-    max-width: 1200px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--secondary-color);
-    color: white;
-    position: relative;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
+.lg-screen .app-icon {
+  width: 64px;
+  height: 64px;
+}
 
-  .lg-screen .app-icon {
-    width: 64px;
-    height: 64px;
-  }
+.lg-screen .terms-policy {
+  position: absolute;
+  top: 32px;
+  right: 16px;
+  font-size: 1rem;
+  text-decoration: none;
+  outline: none;
+  color: white;
+}
 
-  .lg-screen .terms-policy {
-    position: absolute;
-    top: 32px;
-    right: 16px;
-    font-size: 1rem;
-    text-decoration: none;
-    outline: none;
-    color: white;
-  }
+.lg-screen .open-telegram {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 32px;
+  font-size: 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  outline: none;
+  justify-self: center;
+  align-self: center;
+}
 
-  .lg-screen .open-telegram {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 32px;
-    font-size: 2rem;
-    border-radius: 8px;
-    text-decoration: none;
-    outline: none;
-  }
+.lg-screen .open-telegram:hover,
+.lg-screen .terms-policy:hover {
+  opacity: 0.5;
+  transition: transform 0.2s ease-in;
+  cursor: pointer;
+}
 
-  .lg-screen .open-telegram:hover,
-  .lg-screen .terms-policy:hover {
-    opacity: 0.5;
-    transition: transform 0.2s ease-in;
-    cursor: pointer;
-  }
+.lg-screen p {
+  margin-top: 16px;
+  font-size: 1.5rem;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
 
-  .lg-screen p {
-    margin-top: 16px;
-    font-size: 1.5rem;
-  }
-
-  .lg-screen label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
+.lg-screen label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 8px;
 }

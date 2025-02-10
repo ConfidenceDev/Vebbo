@@ -1,0 +1,25 @@
+@media (max-width: 768px) {
+  .lg-screen .app-icon {
+    width: 44px;
+    height: 44px;
+    top: 18px;
+    left: 18px;
+  }
+
+  .lg-screen .open-telegram {
+    padding: 16px;
+    margin: 16px;
+    font-size: 1rem;
+  }
+
+  .lg-screen p {
+    margin-top: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .lg-screen label {
+    font-size: 0.8rem;
+    margin: 8px;
+  }
+}

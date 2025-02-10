@@ -256,26 +256,23 @@ if (window.innerWidth <= 1024) {
         }
       });
 
-      chatField.addEventListener("keypress", function () {
-        const doc = {
-          remoteId: remoteId,
-          userId: socket.id,
-          empty: false,
-        };
-        if (remoteId !== null) socket.emit("typing", doc);
-      });
-
-      chatField.addEventListener("keydown", function (event) {
-        const key = event.key;
-        if (key === "Backspace" || key === "Delete") {
-          if (chatField.value.length === 1) {
-            const doc = {
-              remoteId: remoteId,
-              userId: socket.id,
-              empty: true,
-            };
-            if (remoteId !== null) socket.emit("typing", doc);
-          }
+      chatField.addEventListener("input", (e) => {
+        const target = e.currentTarget;
+        const currentLength = target.value.length;
+        if (currentLength > 0) {
+          const doc = {
+            remoteId: remoteId,
+            userId: socket.id,
+            empty: true,
+          };
+          if (remoteId !== null) socket.emit("typing", doc);
+        } else {
+          const doc = {
+            remoteId: remoteId,
+            userId: socket.id,
+            empty: false,
+          };
+          if (remoteId !== null) socket.emit("typing", doc);
         }
       });
 
