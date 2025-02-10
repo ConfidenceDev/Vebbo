@@ -44,6 +44,11 @@ const tns = [
     credential: "rnTIEmNRrPHKdvQt",
   },
   {
+    urls: "turn:relay1.expressturn.com:3478",
+    username: "efW90JI8C6SO58V6AR",
+    credential: "uf9L8pGAPOPlqufG",
+  },
+  {
     urls: "turn:global.relay.metered.ca:80",
     username: "49c8ff68494315638735533d",
     credential: "iVjn77UWkf4Thkvc",
@@ -173,6 +178,7 @@ function genTeleId() {
 }
 // ===================== PEER ==================================
 io.on("connection", (socket) => {
+  socket.emit("tns", tns);
   if (teleId !== null) socket.emit("start", teleId);
   else socket.emit("start", genTeleId());
   let count = io.sockets.server.engine.clientsCount;

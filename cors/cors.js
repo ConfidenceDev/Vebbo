@@ -1,7 +1,12 @@
 import cors from "cors";
 
 const corsObj = {
-  origin: "*",
+  origin: [
+    "https://www.vebbo.onrender.com",
+    "https://vebbo.onrender.com",
+    "vebbo.onrender.com",
+    "vebbo.me",
+  ],
   methods: ["GET", "PUT", "POST", "DELETE"],
   allowedHeaders: [
     "Access-Control-Allow-Headers",
