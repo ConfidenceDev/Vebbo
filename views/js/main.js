@@ -29,14 +29,14 @@ if (!tg || !tg.initData) {
   smScreen.style = "display: none;";
   lgScreen.style = "display: flex;";
 } else {
-  const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-    manifestUrl: `${url}/tcm.json`,
-  });
-
   const socket = io(url);
   const isLocal = false;
   const url = "https://vebbo.onrender.com";
   //const url = "http://localhost:3000";
+
+  const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
+    manifestUrl: `${url}/tcm.json`,
+  });
 
   const store = "wallet";
   let walletConnected = false;
