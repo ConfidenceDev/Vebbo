@@ -32,6 +32,39 @@ const bot = new Telegraf(process.env.BOT);
 const webAppUrl = "t.me/vebbo_bot/vebbo";
 let teleId = null;
 
+const tns = [
+  { urls: "stun:stun.l.google.com:19302" },
+  { urls: "stun:global.stun.twilio.com:3478" },
+  {
+    urls: "stun:stun.relay.metered.ca:80",
+  },
+  {
+    urls: "turn:relay1.expressturn.com:3478",
+    username: "ef71JD8DV8DVI0KHBL",
+    credential: "rnTIEmNRrPHKdvQt",
+  },
+  {
+    urls: "turn:global.relay.metered.ca:80",
+    username: "49c8ff68494315638735533d",
+    credential: "iVjn77UWkf4Thkvc",
+  },
+  {
+    urls: "turn:global.relay.metered.ca:80?transport=tcp",
+    username: "49c8ff68494315638735533d",
+    credential: "iVjn77UWkf4Thkvc",
+  },
+  {
+    urls: "turn:global.relay.metered.ca:443",
+    username: "49c8ff68494315638735533d",
+    credential: "iVjn77UWkf4Thkvc",
+  },
+  {
+    urls: "turns:global.relay.metered.ca:443?transport=tcp",
+    username: "49c8ff68494315638735533d",
+    credential: "iVjn77UWkf4Thkvc",
+  },
+];
+
 const options = {
   debug: true,
   allow_discovery: true,

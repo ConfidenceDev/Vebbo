@@ -1,0 +1,72 @@
+Express Turn | Metered.ca(500MB)
+
+Stackdrive@11
+1000GB/Month
+
+TURN Servers
+relay1.expressturn.com:3478
+
+Username
+ef71JD8DV8DVI0KHBL
+
+Password
+rnTIEmNRrPHKdvQt
+
+================================================
+
+ iceServers: [
+      {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80?transport=tcp",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:443",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turns:global.relay.metered.ca:443?transport=tcp",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+  ],
+
+ iceServers: [
+      {
+        urls: "stun:stun.relay.metered.ca:80",
+      },
+       {
+        urls: "turn:relay1.expressturn.com:3478",
+        username: "ef71JD8DV8DVI0KHBL",
+        credential: "rnTIEmNRrPHKdvQt",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:80?transport=tcp",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turn:global.relay.metered.ca:443",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+      {
+        urls: "turns:global.relay.metered.ca:443?transport=tcp",
+        username: "49c8ff68494315638735533d",
+        credential: "iVjn77UWkf4Thkvc",
+      },
+  ],
