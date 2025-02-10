@@ -384,6 +384,12 @@ if (window.innerWidth <= 1024) {
       if (remoteId !== null) socket.emit("leave", doc);
     }
 
+    window.Telegram.WebApp.onEvent("close", () => {
+      leavePeer();
+      stopStream();
+      socket.disconnect();
+    });
+
     window.addEventListener("beforeunload", () => {
       leavePeer();
       stopStream();

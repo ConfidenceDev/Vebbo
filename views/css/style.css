@@ -279,7 +279,6 @@ li .other {
 }
 
 .btn:hover {
-  opacity: 0.5;
   transition: transform 0.2s ease-in;
   cursor: pointer;
 }
