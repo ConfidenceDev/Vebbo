@@ -284,6 +284,11 @@ li .other {
   cursor: pointer;
 }
 
+.btn:active,
+.btn:focus {
+  opacity: 1;
+}
+
 hr {
   height: 1px;
   margin: 4px 0;
