@@ -92,6 +92,12 @@ const startButton = {
           url: webAppUrl,
         },
       ],
+      [
+        {
+          text: "Invite Friends",
+          switch_inline_query: "Join me on vebbo chat 📱", // Allows sharing bot link
+        },
+      ],
       [{ text: "Contact Us", callback_data: "contact" }],
     ],
   },
