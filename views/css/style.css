@@ -205,6 +205,19 @@ ul {
   flex-direction: column;
   height: 100%;
   width: 50vw;
+  position: relative;
+}
+
+.typing {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.9rem;
+  color: var(--dark-grey);
+  background-color: var(--light-grey);
+  padding: 4px;
+  border-radius: 4px;
+  display: none;
 }
 
 .chat-list {

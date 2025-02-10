@@ -1,5 +1,12 @@
 import cors from "cors";
 
+/*origin: [
+  "https://www.vebbo.onrender.com",
+  "https://vebbo.onrender.com",
+  "vebbo.onrender.com",
+  "vebbo.me",
+],*/
+
 const corsObj = {
   origin: [
     "https://www.vebbo.onrender.com",

@@ -49,6 +49,11 @@ const tns = [
     credential: "uf9L8pGAPOPlqufG",
   },
   {
+    urls: "turn:relay1.expressturn.com:3478",
+    username: "efKGVDG9M9OXX7QVEK",
+    credential: "ajXHz6N0kONOJzgd",
+  },
+  {
     urls: "turn:global.relay.metered.ca:80",
     username: "49c8ff68494315638735533d",
     credential: "iVjn77UWkf4Thkvc",
@@ -222,6 +227,11 @@ io.on("connection", (socket) => {
       socket.broadcast.to(data.remoteId).emit("chat", data);
       socket.emit("chat", data);
     }
+  });
+
+  //============= Typing =================
+  socket.on("typing", (data) => {
+    if (data.remoteId) socket.broadcast.to(data.remoteId).emit("typing", data);
   });
 
   //============= Leave =================

@@ -26,6 +26,7 @@ if (window.innerWidth <= 1024) {
   const walletLabel = document.getElementById("walletLabel");
   const walletBtn = document.getElementById("wallet-btn");
   const disconnectBtn = document.getElementById("disconnect");
+  const typing = document.getElementById("typing");
   const chatList = document.getElementById("chat-list");
   const chatField = document.getElementById("chat-field");
   const sendBtn = document.getElementById("send-btn");
@@ -214,6 +215,7 @@ if (window.innerWidth <= 1024) {
       });
 
       socket.on("chat", (data) => {
+        typing.style = "display: none;";
         let li = document.createElement("li");
         addChat(data, li);
         chatList.scrollTop = chatList.scrollHeight;
@@ -254,6 +256,34 @@ if (window.innerWidth <= 1024) {
         }
       });
 
+      chatField.addEventListener("keypress", function () {
+        const doc = {
+          remoteId: remoteId,
+          userId: socket.id,
+          empty: false,
+        };
+        if (remoteId !== null) socket.emit("typing", doc);
+      });
+
+      chatField.addEventListener("keydown", function (event) {
+        const key = event.key;
+        if (key === "Backspace" || key === "Delete") {
+          if (chatField.value.length === 1) {
+            const doc = {
+              remoteId: remoteId,
+              userId: socket.id,
+              empty: true,
+            };
+            if (remoteId !== null) socket.emit("typing", doc);
+          }
+        }
+      });
+
+      socket.on("typing", (data) => {
+        if (!data.empty) typing.style = "display: flex;";
+        else typing.style = "display: none;";
+      });
+
       startStopBtn.addEventListener("click", (e) => {
         e.preventDefault();
         if (startStopBtn.innerText === "Start") {
@@ -274,6 +304,7 @@ if (window.innerWidth <= 1024) {
           startStopBtn.innerText = "Start";
           startStopBtn.style = "opacity: 1;";
         }
+        typing.style = "display: none;";
         reportBtn.style = "opacity: .4;";
         reportBtn.style.pointerEvents = "none";
       });
@@ -291,6 +322,7 @@ if (window.innerWidth <= 1024) {
       function toNext() {
         chatList.innerHTML = "";
         chatField.disabled = true;
+        typing.style = "display: none;";
         stopStream();
         loadPeer();
       }
