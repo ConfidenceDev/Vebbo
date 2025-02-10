@@ -1,37 +1,43 @@
-if (window.innerWidth <= 1024) {
-  const url = "https://vebbo.onrender.com";
+const tg = window.Telegram.WebApp;
+tg.expand();
 
-  const tg = window.Telegram.WebApp;
-  tg.expand();
+const smScreen = document.getElementById("sm-screen");
+const lgScreen = document.getElementById("lg-screen");
+const okBtn = document.getElementById("ok-btn");
+const reportBtn = document.getElementById("report-btn");
+const sendReportBtn = document.getElementById("send-report");
+const loader = document.getElementById("loader");
+const onlineContainer = document.getElementById("online-container");
+const onlineCount = document.getElementById("online-count");
+const remoteVideo = document.getElementById("remote-video");
+const localVideo = document.getElementById("local-video");
+const noteContent = document.getElementById("note-content");
+const noteBtn = document.getElementById("note-btn");
+const noteField = document.getElementById("note-field");
+const noteCount = document.getElementById("note-count");
+const walletLabel = document.getElementById("walletLabel");
+const walletBtn = document.getElementById("wallet-btn");
+const disconnectBtn = document.getElementById("disconnect");
+const typing = document.getElementById("typing");
+const chatList = document.getElementById("chat-list");
+const chatField = document.getElementById("chat-field");
+const sendBtn = document.getElementById("send-btn");
+const startStopBtn = document.getElementById("start-stop");
+const nextBtn = document.getElementById("next");
+
+if (!tg || !tg.initData) {
+  smScreen.style = "display: none;";
+  lgScreen.style = "display: flex;";
+} else {
+  const isLocal = false;
+  const url = "https://vebbo.onrender.com";
+  //const url = "http://localhost:3000";
 
   const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
     manifestUrl: `${url}/tcm.json`,
   });
 
   const socket = io(url);
-  const isLocal = false;
-
-  const okBtn = document.getElementById("ok-btn");
-  const reportBtn = document.getElementById("report-btn");
-  const sendReportBtn = document.getElementById("send-report");
-  const loader = document.getElementById("loader");
-  const onlineContainer = document.getElementById("online-container");
-  const onlineCount = document.getElementById("online-count");
-  const remoteVideo = document.getElementById("remote-video");
-  const localVideo = document.getElementById("local-video");
-  const noteContent = document.getElementById("note-content");
-  const noteBtn = document.getElementById("note-btn");
-  const noteField = document.getElementById("note-field");
-  const noteCount = document.getElementById("note-count");
-  const walletLabel = document.getElementById("walletLabel");
-  const walletBtn = document.getElementById("wallet-btn");
-  const disconnectBtn = document.getElementById("disconnect");
-  const typing = document.getElementById("typing");
-  const chatList = document.getElementById("chat-list");
-  const chatField = document.getElementById("chat-field");
-  const sendBtn = document.getElementById("send-btn");
-  const startStopBtn = document.getElementById("start-stop");
-  const nextBtn = document.getElementById("next");
 
   const store = "wallet";
   let walletConnected = false;
@@ -263,14 +269,14 @@ if (window.innerWidth <= 1024) {
           const doc = {
             remoteId: remoteId,
             userId: socket.id,
-            empty: true,
+            empty: false,
           };
           if (remoteId !== null) socket.emit("typing", doc);
         } else {
           const doc = {
             remoteId: remoteId,
             userId: socket.id,
-            empty: false,
+            empty: true,
           };
           if (remoteId !== null) socket.emit("typing", doc);
         }
