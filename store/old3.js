@@ -77,7 +77,6 @@ if (window.innerWidth <= 1024) {
 
   socket.on("connect", () => {
     socket.on("tns", (tns) => {
-      console.log(tns);
       const peer = new Peer(socket.id, {
         host: isLocal ? "localhost" : "vebbo.onrender.com",
         port: isLocal ? 3000 : 443,

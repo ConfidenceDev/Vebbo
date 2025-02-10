@@ -1,597 +1,600 @@
-function _0x3b78(_0x42f0a9, _0x3f6433) {
-  const _0x5c8413 = _0x5c84();
+function _0x1f6f(_0x3ef83f, _0x3877db) {
+  const _0x30de33 = _0x30de();
   return (
-    (_0x3b78 = function (_0x3b7841, _0x111b11) {
-      _0x3b7841 = _0x3b7841 - 0x198;
-      let _0x6975fb = _0x5c8413[_0x3b7841];
-      return _0x6975fb;
+    (_0x1f6f = function (_0x1f6faa, _0x1f3c95) {
+      _0x1f6faa = _0x1f6faa - 0x151;
+      let _0x10750c = _0x30de33[_0x1f6faa];
+      return _0x10750c;
     }),
-    _0x3b78(_0x42f0a9, _0x3f6433)
+    _0x1f6f(_0x3ef83f, _0x3877db)
   );
 }
-const _0x10b975 = _0x3b78;
-(function (_0x4c90b4, _0x4709ec) {
-  const _0x2b14a9 = _0x3b78,
-    _0x5ca5ba = _0x4c90b4();
+function _0x30de() {
+  const _0x3de7bc = [
+    "assign",
+    "Publish\x20|\x200.1\x20Ton",
+    "tns",
+    "266MZwuZJ",
+    "online-count",
+    "style",
+    "Connect\x20Wallet",
+    "xxxxxxxxx",
+    "getItem",
+    "scrollHeight",
+    "wallet-btn",
+    "application/json",
+    "/note",
+    "online",
+    "https://vebbo.onrender.com",
+    "start",
+    "loader",
+    "teleId",
+    "auto",
+    "click",
+    "vebbo.onrender.com",
+    "send-report",
+    "WebApp",
+    "setItem",
+    "flags",
+    "start-stop",
+    "innerWidth",
+    "length",
+    "pointerEvents",
+    "/notepay",
+    "href",
+    "addEventListener",
+    "note-count",
+    "sendTransaction",
+    "2840ZbiDtR",
+    "value",
+    "flagged",
+    "innerHTML",
+    "wallet",
+    "json",
+    "705074WDUwxw",
+    "connectWallet",
+    "note",
+    "/tcm.json",
+    "online-container",
+    "createElement",
+    "local-video",
+    "obj",
+    "setAttribute",
+    "chat",
+    "Write\x20a\x20note",
+    "userId",
+    "disabled",
+    "stream",
+    "now",
+    "2736477LMHvvn",
+    "none",
+    "572750Cubgkc",
+    "chat-field",
+    "opacity:\x20.4;",
+    "account",
+    "flagger",
+    "Wallet:\x20",
+    "/peerjs",
+    "note-content",
+    "</p>",
+    "keyup",
+    "getElementById",
+    "7838613bAlfcF",
+    "emit",
+    "play",
+    "input",
+    "beforeunload",
+    "remote-video",
+    "showAlert",
+    "location",
+    "stringify",
+    "Enter",
+    "innerText",
+    "key",
+    "popup_start",
+    "Wallet\x20Load\x20Error:",
+    "msg",
+    "opacity:\x201;",
+    "note-field",
+    "leave",
+    "keyCode",
+    "getUserMedia",
+    "display:\x20flex;",
+    "playsinline",
+    "srcObject",
+    "popup_msg",
+    "Stop",
+    "Note\x20published\x20✅",
+    "log",
+    "48KuSxjy",
+    "parse",
+    "navigator.getUserMedia\x20error:\x20",
+    "3981560hrtXWV",
+    "POST",
+    "disconnect",
+    "send-btn",
+    "TonConnectUI",
+    "close",
+    "/1024",
+    "popup_note",
+    "\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22msg\x22><span\x20class=\x22other\x22>User:\x20</span>",
+    "popup_report",
+    "currentTarget",
+    "mozGetUserMedia",
+    "display:\x20none;",
+    "chat-list",
+    "found",
+    "autoplay",
+    "scrollTop",
+    "includes",
+    "connect",
+    "loadedmetadata",
+    "open",
+    "split",
+    "\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22msg\x22><span\x20class=\x22you\x22>You:\x20</span>",
+    "call",
+    "toString",
+    "next",
+    "Telegram",
+    "Wallet\x20connection\x20failed.",
+    "report-btn",
+    "note-btn",
+    "error",
+    "peer",
+    "slice",
+    "227005iwgeyf",
+    "preventDefault",
+    "0/1024",
+    "msGetUserMedia",
+  ];
+  _0x30de = function () {
+    return _0x3de7bc;
+  };
+  return _0x30de();
+}
+const _0x28c2e7 = _0x1f6f;
+(function (_0x12f7cf, _0x475bf4) {
+  const _0xdd3009 = _0x1f6f,
+    _0x168bf4 = _0x12f7cf();
   while (!![]) {
     try {
-      const _0x1ad34f =
-        (-parseInt(_0x2b14a9(0x1d3)) / 0x1) *
-          (parseInt(_0x2b14a9(0x208)) / 0x2) +
-        (parseInt(_0x2b14a9(0x1c3)) / 0x3) *
-          (-parseInt(_0x2b14a9(0x1cf)) / 0x4) +
-        (-parseInt(_0x2b14a9(0x1b9)) / 0x5) *
-          (-parseInt(_0x2b14a9(0x1e0)) / 0x6) +
-        -parseInt(_0x2b14a9(0x1bc)) / 0x7 +
-        parseInt(_0x2b14a9(0x214)) / 0x8 +
-        parseInt(_0x2b14a9(0x19c)) / 0x9 +
-        parseInt(_0x2b14a9(0x203)) / 0xa;
-      if (_0x1ad34f === _0x4709ec) break;
-      else _0x5ca5ba["push"](_0x5ca5ba["shift"]());
-    } catch (_0x5c4134) {
-      _0x5ca5ba["push"](_0x5ca5ba["shift"]());
+      const _0x4011df =
+        parseInt(_0xdd3009(0x162)) / 0x1 +
+        parseInt(_0xdd3009(0x151)) / 0x2 +
+        -parseInt(_0xdd3009(0x160)) / 0x3 +
+        parseInt(_0xdd3009(0x18b)) / 0x4 +
+        (-parseInt(_0xdd3009(0x1ac)) / 0x5) *
+          (-parseInt(_0xdd3009(0x188)) / 0x6) +
+        (-parseInt(_0xdd3009(0x1b3)) / 0x7) *
+          (-parseInt(_0xdd3009(0x1d2)) / 0x8) +
+        -parseInt(_0xdd3009(0x16d)) / 0x9;
+      if (_0x4011df === _0x475bf4) break;
+      else _0x168bf4["push"](_0x168bf4["shift"]());
+    } catch (_0x9ff2b6) {
+      _0x168bf4["push"](_0x168bf4["shift"]());
     }
   }
-})(_0x5c84, 0xc24f7);
-if (window[_0x10b975(0x1d7)] <= 0x400) {
-  const url = _0x10b975(0x1c0),
-    tg = window[_0x10b975(0x205)][_0x10b975(0x1ef)];
-  tg[_0x10b975(0x1f5)]();
-  const tonConnectUI = new TON_CONNECT_UI[_0x10b975(0x1a0)]({
-      manifestUrl: url + "/tcm.json",
+})(_0x30de, 0x7d8d3);
+if (window[_0x28c2e7(0x1ca)] <= 0x400) {
+  const url = _0x28c2e7(0x1be),
+    tg = window[_0x28c2e7(0x1a5)][_0x28c2e7(0x1c6)];
+  tg["expand"]();
+  const tonConnectUI = new TON_CONNECT_UI[_0x28c2e7(0x18f)]({
+      manifestUrl: url + _0x28c2e7(0x154),
     }),
     socket = io(url),
     isLocal = ![],
-    okBtn = document[_0x10b975(0x1fe)](_0x10b975(0x21b)),
-    reportBtn = document[_0x10b975(0x1fe)]("report-btn"),
-    sendReportBtn = document[_0x10b975(0x1fe)]("send-report"),
-    loader = document[_0x10b975(0x1fe)](_0x10b975(0x210)),
-    onlineContainer = document[_0x10b975(0x1fe)](_0x10b975(0x19f)),
-    onlineCount = document[_0x10b975(0x1fe)]("online-count"),
-    remoteVideo = document[_0x10b975(0x1fe)]("remote-video"),
-    localVideo = document[_0x10b975(0x1fe)](_0x10b975(0x1fb)),
-    noteContent = document[_0x10b975(0x1fe)](_0x10b975(0x1ee)),
-    noteBtn = document[_0x10b975(0x1fe)]("note-btn"),
-    noteField = document[_0x10b975(0x1fe)]("note-field"),
-    noteCount = document[_0x10b975(0x1fe)](_0x10b975(0x1c9)),
-    walletLabel = document["getElementById"](_0x10b975(0x1cc)),
-    walletBtn = document["getElementById"](_0x10b975(0x1e6)),
-    disconnectBtn = document["getElementById"]("disconnect"),
-    chatList = document[_0x10b975(0x1fe)](_0x10b975(0x1ce)),
-    chatField = document["getElementById"](_0x10b975(0x201)),
-    sendBtn = document[_0x10b975(0x1fe)]("send-btn"),
-    startStopBtn = document[_0x10b975(0x1fe)](_0x10b975(0x1ae)),
-    nextBtn = document[_0x10b975(0x1fe)]("next"),
-    store = _0x10b975(0x1e5);
+    okBtn = document["getElementById"]("ok-btn"),
+    reportBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1a7)),
+    sendReportBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1c5)),
+    loader = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1c0)),
+    onlineContainer = document[_0x28c2e7(0x16c)](_0x28c2e7(0x155)),
+    onlineCount = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1b4)),
+    remoteVideo = document[_0x28c2e7(0x16c)](_0x28c2e7(0x172)),
+    localVideo = document["getElementById"](_0x28c2e7(0x157)),
+    noteContent = document[_0x28c2e7(0x16c)](_0x28c2e7(0x169)),
+    noteBtn = document["getElementById"](_0x28c2e7(0x1a8)),
+    noteField = document["getElementById"](_0x28c2e7(0x17d)),
+    noteCount = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1d0)),
+    walletLabel = document[_0x28c2e7(0x16c)]("walletLabel"),
+    walletBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1ba)),
+    disconnectBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x18d)),
+    chatList = document["getElementById"](_0x28c2e7(0x198)),
+    chatField = document[_0x28c2e7(0x16c)](_0x28c2e7(0x163)),
+    sendBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x18e)),
+    startStopBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1c9)),
+    nextBtn = document[_0x28c2e7(0x16c)](_0x28c2e7(0x1a4)),
+    store = _0x28c2e7(0x1d6);
   let walletConnected = ![];
-  (chatField[_0x10b975(0x1d1)] = !![]),
-    (nextBtn[_0x10b975(0x1f1)] = _0x10b975(0x217)),
-    (nextBtn[_0x10b975(0x1f1)][_0x10b975(0x21a)] = _0x10b975(0x1e8));
+  (chatField[_0x28c2e7(0x15d)] = !![]),
+    (nextBtn[_0x28c2e7(0x1b5)] = _0x28c2e7(0x164)),
+    (nextBtn[_0x28c2e7(0x1b5)][_0x28c2e7(0x1cc)] = _0x28c2e7(0x161));
   let remoteId = null,
     call = null,
     teleId = null,
     flags = {};
-  !localStorage[_0x10b975(0x1cb)]("start") && loadModal(_0x10b975(0x1d5));
-  okBtn[_0x10b975(0x1c2)](_0x10b975(0x200), () => {
-    const _0xc8f416 = _0x10b975;
-    localStorage[_0xc8f416(0x209)]("start", !![]), loadModal("");
+  !localStorage[_0x28c2e7(0x1b8)](_0x28c2e7(0x1bf)) &&
+    loadModal(_0x28c2e7(0x179));
+  okBtn[_0x28c2e7(0x1cf)](_0x28c2e7(0x1c3), () => {
+    const _0x28c7ce = _0x28c2e7;
+    localStorage[_0x28c7ce(0x1c7)](_0x28c7ce(0x1bf), !![]), loadModal("");
   });
   const constraints = { audio: !![], video: !![] },
     stream =
-      navigator["getUserMedia"] ||
-      navigator[_0x10b975(0x1b1)] ||
-      navigator[_0x10b975(0x1dc)] ||
-      navigator[_0x10b975(0x20b)];
+      navigator[_0x28c2e7(0x180)] ||
+      navigator["webkitGetUserMedia"] ||
+      navigator[_0x28c2e7(0x196)] ||
+      navigator[_0x28c2e7(0x1af)];
   stream(constraints, onsuccess, onerror);
-  function onsuccess(_0x3de495) {
-    const _0x2ddb40 = _0x10b975;
-    (window["stream"] = _0x3de495),
-      (localVideo["srcObject"] = _0x3de495),
-      localVideo[_0x2ddb40(0x1c2)](_0x2ddb40(0x1df), () => {
-        localVideo["play"]();
+  function onsuccess(_0x4d8de4) {
+    const _0x1f090c = _0x28c2e7;
+    (window["stream"] = _0x4d8de4),
+      (localVideo[_0x1f090c(0x183)] = _0x4d8de4),
+      localVideo[_0x1f090c(0x1cf)](_0x1f090c(0x19e), () => {
+        const _0x424c3d = _0x1f090c;
+        localVideo[_0x424c3d(0x16f)]();
       });
   }
-  function onerror(_0x309da9) {
-    const _0x21b279 = _0x10b975;
-    console[_0x21b279(0x1dd)](
-      "navigator.getUserMedia\x20error:\x20",
-      _0x309da9
-    );
+  function onerror(_0x5a71b7) {
+    const _0x50d715 = _0x28c2e7;
+    console[_0x50d715(0x187)](_0x50d715(0x18a), _0x5a71b7);
   }
-  socket["on"](_0x10b975(0x1eb), () => {
-    const _0x49e6c4 = _0x10b975;
-    socket["on"](_0x49e6c4(0x1f6), (_0x151ef6) => {
-      const _0x16282d = _0x49e6c4;
-      console["log"](_0x151ef6);
-      const _0x309a7f = new Peer(socket["id"], {
-        host: isLocal ? _0x16282d(0x1d8) : _0x16282d(0x1da),
-        port: isLocal ? 0xbb8 : 0x1bb,
-        path: _0x16282d(0x19a),
-        secure: !isLocal,
-        config: { iceServers: _0x151ef6 },
-      });
-      _0x309a7f["on"](_0x16282d(0x1ff), () => {}),
-        socket["on"](_0x16282d(0x1c6), (_0x58f802) => {
-          teleId = _0x58f802;
+  socket["on"](_0x28c2e7(0x19d), () => {
+    const _0x22ce86 = _0x28c2e7;
+    socket["on"](_0x22ce86(0x1b2), (_0x4adfe8) => {
+      const _0x2b3203 = _0x22ce86,
+        _0x102a42 = new Peer(socket["id"], {
+          host: isLocal ? "localhost" : _0x2b3203(0x1c4),
+          port: isLocal ? 0xbb8 : 0x1bb,
+          path: _0x2b3203(0x168),
+          secure: !isLocal,
+          config: { iceServers: _0x4adfe8 },
+        });
+      _0x102a42["on"](_0x2b3203(0x19f), () => {}),
+        socket["on"](_0x2b3203(0x1bf), (_0x1c01d2) => {
+          teleId = _0x1c01d2;
         }),
-        socket["on"](_0x16282d(0x1ca), (_0x31c8c1) => {
-          const _0x38abba = _0x16282d;
-          noteContent[_0x38abba(0x1e9)] = _0x31c8c1;
+        socket["on"]("note", (_0xee44cf) => {
+          noteContent["innerText"] = _0xee44cf;
         }),
-        socket["on"](_0x16282d(0x219), (_0x581add) => {
-          const _0x2fcd4e = _0x16282d;
-          onlineCount[_0x2fcd4e(0x1e9)] = toComma(_0x581add);
+        socket["on"](_0x2b3203(0x1bd), (_0x2e5d7d) => {
+          const _0x59a25e = _0x2b3203;
+          onlineCount[_0x59a25e(0x177)] = toComma(_0x2e5d7d);
         }),
-        socket["on"]("flagged", (_0x521f66) => {
-          const _0x3b0921 = _0x16282d;
-          (flags[_0x521f66[_0x3b0921(0x1a6)]] = Date[_0x3b0921(0x204)]()),
-            localStorage["setItem"](
-              _0x3b0921(0x19e),
-              JSON[_0x3b0921(0x1a9)](flags)
+        socket["on"](_0x2b3203(0x1d4), (_0x4961eb) => {
+          const _0x2126b9 = _0x2b3203;
+          (flags[_0x4961eb[_0x2126b9(0x166)]] = Date[_0x2126b9(0x15f)]()),
+            localStorage[_0x2126b9(0x1c7)](
+              _0x2126b9(0x1c8),
+              JSON[_0x2126b9(0x175)](flags)
             );
         });
-      async function _0xed8236() {
-        const _0x816c13 = _0x16282d;
+      async function _0x30e5ee() {
+        const _0x514b26 = _0x2b3203;
         try {
-          const _0x7b5c59 = localStorage["getItem"](store);
-          (flags = JSON[_0x816c13(0x1a2)](
-            localStorage[_0x816c13(0x1cb)](_0x816c13(0x19e))
+          const _0x5113cf = localStorage[_0x514b26(0x1b8)](store);
+          (flags = JSON[_0x514b26(0x189)](
+            localStorage[_0x514b26(0x1b8)](_0x514b26(0x1c8))
           )),
-            _0x7b5c59
-              ? ((walletLabel[_0x816c13(0x1e9)] =
-                  _0x816c13(0x1a4) + formatWalletAddress(_0x7b5c59)),
+            _0x5113cf
+              ? ((walletLabel[_0x514b26(0x177)] =
+                  _0x514b26(0x167) + formatWalletAddress(_0x5113cf)),
                 (walletConnected = !![]),
-                (walletBtn["innerText"] = _0x816c13(0x20a)),
-                (disconnectBtn["style"] = "display:\x20flex;"))
-              : _0x16f2f8();
-        } catch (_0x57c0ce) {
-          console[_0x816c13(0x20f)]("Wallet\x20Load\x20Error:", _0x57c0ce),
-            _0x16f2f8();
+                (walletBtn[_0x514b26(0x177)] = _0x514b26(0x1b1)),
+                (disconnectBtn[_0x514b26(0x1b5)] = _0x514b26(0x181)))
+              : _0x21565a();
+        } catch (_0x467186) {
+          console[_0x514b26(0x1a9)](_0x514b26(0x17a), _0x467186), _0x21565a();
         }
       }
-      function _0x16f2f8() {
-        const _0x54e5f1 = _0x16282d;
-        (walletLabel[_0x54e5f1(0x1e9)] = _0x54e5f1(0x19d)),
-          localStorage[_0x54e5f1(0x1af)](store),
-          (walletBtn[_0x54e5f1(0x1e9)] = _0x54e5f1(0x1d4)),
+      function _0x21565a() {
+        const _0x5f2f00 = _0x2b3203;
+        (walletLabel[_0x5f2f00(0x177)] = "Wallet:\x20Not\x20connected"),
+          localStorage["removeItem"](store),
+          (walletBtn["innerText"] = _0x5f2f00(0x1b6)),
           (walletConnected = ![]),
-          (disconnectBtn["style"] = _0x54e5f1(0x1b0));
+          (disconnectBtn[_0x5f2f00(0x1b5)] = _0x5f2f00(0x197));
       }
-      disconnectBtn[_0x16282d(0x1c2)](_0x16282d(0x200), async () => {
-        const _0x266963 = _0x16282d;
-        await tonConnectUI[_0x266963(0x1a5)](), _0x16f2f8();
+      disconnectBtn[_0x2b3203(0x1cf)](_0x2b3203(0x1c3), async () => {
+        const _0x2172d1 = _0x2b3203;
+        await tonConnectUI[_0x2172d1(0x18d)](), _0x21565a();
       }),
-        noteField["addEventListener"](_0x16282d(0x1bf), (_0x474264) => {
-          const _0x5488ce = _0x16282d,
-            _0xbe087a = _0x474264[_0x5488ce(0x1c1)],
-            _0x5b93e4 = _0xbe087a[_0x5488ce(0x1db)][_0x5488ce(0x1bd)];
-          noteCount[_0x5488ce(0x1e9)] = _0x5b93e4 + _0x5488ce(0x1b2);
+        noteField["addEventListener"](_0x2b3203(0x170), (_0x4bb460) => {
+          const _0xb090f1 = _0x2b3203,
+            _0x29fdca = _0x4bb460[_0xb090f1(0x195)],
+            _0xd8dea2 = _0x29fdca[_0xb090f1(0x1d3)][_0xb090f1(0x1cb)];
+          noteCount["innerText"] = _0xd8dea2 + _0xb090f1(0x191);
         }),
-        walletBtn[_0x16282d(0x1c2)](_0x16282d(0x200), async (_0x517601) => {
-          const _0x2e5206 = _0x16282d;
-          _0x517601[_0x2e5206(0x213)](), (walletBtn[_0x2e5206(0x1d1)] = !![]);
+        walletBtn[_0x2b3203(0x1cf)](_0x2b3203(0x1c3), async (_0x209079) => {
+          const _0x18c89e = _0x2b3203;
+          _0x209079["preventDefault"](), (walletBtn["disabled"] = !![]);
           try {
             if (!walletConnected) {
-              if (localStorage[_0x2e5206(0x1cb)](store))
-                await tonConnectUI[_0x2e5206(0x1a5)]();
-              const _0x5daef5 = await tonConnectUI[_0x2e5206(0x1ad)]();
-              if (!_0x5daef5 || !_0x5daef5[_0x2e5206(0x1b6)]) {
-                walletBtn[_0x2e5206(0x1d1)] = ![];
-                throw new Error(_0x2e5206(0x1f7));
+              if (localStorage[_0x18c89e(0x1b8)](store))
+                await tonConnectUI["disconnect"]();
+              const _0x18c1cd = await tonConnectUI[_0x18c89e(0x152)]();
+              if (!_0x18c1cd || !_0x18c1cd[_0x18c89e(0x165)]) {
+                walletBtn[_0x18c89e(0x15d)] = ![];
+                throw new Error(_0x18c89e(0x1a6));
               }
-              const _0x1a2a0c = _0x5daef5[_0x2e5206(0x1b6)][_0x2e5206(0x1a8)],
-                _0x1a0162 = await fetch(url + _0x2e5206(0x1bb), {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON[_0x2e5206(0x1a9)]({ address: _0x1a2a0c }),
+              const _0x2800a8 = _0x18c1cd[_0x18c89e(0x165)]["address"],
+                _0x11d11c = await fetch(url + "/toWallet", {
+                  method: _0x18c89e(0x18c),
+                  headers: { "Content-Type": _0x18c89e(0x1bb) },
+                  body: JSON[_0x18c89e(0x175)]({ address: _0x2800a8 }),
                 }),
-                _0x2948cb = await _0x1a0162[_0x2e5206(0x20d)]();
-              (walletLabel[_0x2e5206(0x1e9)] =
-                _0x2e5206(0x1a4) +
-                formatWalletAddress(_0x2948cb[_0x2e5206(0x1e5)])),
+                _0x5436ad = await _0x11d11c[_0x18c89e(0x1d7)]();
+              (walletLabel[_0x18c89e(0x177)] =
+                _0x18c89e(0x167) +
+                formatWalletAddress(_0x5436ad[_0x18c89e(0x1d6)])),
                 (walletConnected = !![]),
-                localStorage["setItem"](store, _0x2948cb[_0x2e5206(0x1e5)]),
-                (walletBtn[_0x2e5206(0x1e9)] = _0x2e5206(0x20a)),
-                (walletBtn[_0x2e5206(0x1d1)] = ![]),
-                (disconnectBtn[_0x2e5206(0x1f1)] = _0x2e5206(0x206));
+                localStorage[_0x18c89e(0x1c7)](
+                  store,
+                  _0x5436ad[_0x18c89e(0x1d6)]
+                ),
+                (walletBtn[_0x18c89e(0x177)] = _0x18c89e(0x1b1)),
+                (walletBtn["disabled"] = ![]),
+                (disconnectBtn["style"] = _0x18c89e(0x181));
             } else {
-              const _0x4cb8af = noteField["value"];
-              if (!_0x4cb8af || _0x4cb8af[_0x2e5206(0x1db)] == "") {
-                tg["showAlert"](_0x2e5206(0x1ea));
+              const _0x43a2b3 = noteField[_0x18c89e(0x1d3)];
+              if (!_0x43a2b3 || _0x43a2b3[_0x18c89e(0x1d3)] == "") {
+                tg["showAlert"](_0x18c89e(0x15b));
                 return;
               }
-              const _0x3758e5 = await fetch(url + _0x2e5206(0x1c5)),
-                _0xc422d = await _0x3758e5[_0x2e5206(0x20d)]();
-              if (_0xc422d) {
-                await tonConnectUI[_0x2e5206(0x202)](
-                  _0xc422d[_0x2e5206(0x1cd)]
+              const _0x47c2f3 = await fetch(url + _0x18c89e(0x1cd)),
+                _0x1ac5b8 = await _0x47c2f3[_0x18c89e(0x1d7)]();
+              if (_0x1ac5b8) {
+                await tonConnectUI[_0x18c89e(0x1d1)](
+                  _0x1ac5b8[_0x18c89e(0x158)]
                 );
-                const _0x443ed2 = await fetch(url + _0x2e5206(0x211), {
-                  method: _0x2e5206(0x1c7),
-                  headers: { "Content-Type": _0x2e5206(0x1f4) },
-                  body: JSON[_0x2e5206(0x1a9)]({ noteText: _0x4cb8af }),
+                const _0x50cc10 = await fetch(url + _0x18c89e(0x1bc), {
+                  method: _0x18c89e(0x18c),
+                  headers: { "Content-Type": _0x18c89e(0x1bb) },
+                  body: JSON[_0x18c89e(0x175)]({ noteText: _0x43a2b3 }),
                 });
-                await _0x443ed2[_0x2e5206(0x20d)](),
-                  (noteField[_0x2e5206(0x1db)] = null),
-                  (noteCount[_0x2e5206(0x1e9)] = _0x2e5206(0x1ed)),
-                  socket["emit"](_0x2e5206(0x1ca)),
+                await _0x50cc10[_0x18c89e(0x1d7)](),
+                  (noteField[_0x18c89e(0x1d3)] = null),
+                  (noteCount[_0x18c89e(0x177)] = _0x18c89e(0x1ae)),
+                  socket[_0x18c89e(0x16e)](_0x18c89e(0x153)),
                   loadModal(""),
-                  tg[_0x2e5206(0x215)](_0x2e5206(0x1fc));
+                  tg[_0x18c89e(0x173)](_0x18c89e(0x186));
               }
-              walletBtn[_0x2e5206(0x1d1)] = ![];
+              walletBtn[_0x18c89e(0x15d)] = ![];
             }
-          } catch (_0x4bacbf) {
-            (walletBtn[_0x2e5206(0x1d1)] = ![]),
-              console[_0x2e5206(0x20f)](_0x2e5206(0x1e2), _0x4bacbf),
-              tg[_0x2e5206(0x215)](_0x4bacbf),
-              _0x16f2f8();
+          } catch (_0x67735e) {
+            (walletBtn[_0x18c89e(0x15d)] = ![]),
+              console[_0x18c89e(0x1a9)](
+                "Wallet\x20Connection\x20Error:",
+                _0x67735e
+              ),
+              tg[_0x18c89e(0x173)](_0x67735e),
+              _0x21565a();
           }
         }),
-        noteBtn[_0x16282d(0x1c2)](_0x16282d(0x200), (_0xdbb539) => {
-          const _0x5801a5 = _0x16282d;
-          _0xdbb539[_0x5801a5(0x213)](),
-            _0xed8236(),
-            loadModal(_0x5801a5(0x20e));
+        noteBtn["addEventListener"](_0x2b3203(0x1c3), (_0x292e7d) => {
+          const _0x3d8bcd = _0x2b3203;
+          _0x292e7d[_0x3d8bcd(0x1ad)](),
+            _0x30e5ee(),
+            loadModal(_0x3d8bcd(0x192));
         }),
-        socket["on"](_0x16282d(0x218), (_0x1424d1) => {
-          const _0x1dd2ef = _0x16282d;
-          let _0x5efb23 = document[_0x1dd2ef(0x1c4)]("li");
-          _0x3dee78(_0x1424d1, _0x5efb23),
-            (chatList["scrollTop"] = chatList[_0x1dd2ef(0x1ec)]);
+        socket["on"](_0x2b3203(0x15a), (_0x53e79c) => {
+          const _0x4fa55c = _0x2b3203;
+          let _0x441839 = document[_0x4fa55c(0x156)]("li");
+          _0x1ac166(_0x53e79c, _0x441839),
+            (chatList[_0x4fa55c(0x19b)] = chatList[_0x4fa55c(0x1b9)]);
         });
-      function _0x3dee78(_0x4bfac9, _0x37b8b0) {
-        const _0x2799b7 = _0x16282d;
-        _0x4bfac9[_0x2799b7(0x1ba)] !== null &&
-          (_0x4bfac9[_0x2799b7(0x1f3)] !== socket["id"]
-            ? (_0x37b8b0[_0x2799b7(0x1e3)] =
-                _0x2799b7(0x1fa) + _0x4bfac9[_0x2799b7(0x1ba)] + "</p>")
-            : (_0x37b8b0[_0x2799b7(0x1e3)] =
-                _0x2799b7(0x212) +
-                _0x4bfac9[_0x2799b7(0x1ba)] +
-                _0x2799b7(0x21c)),
-          chatList[_0x2799b7(0x1d0)](_0x37b8b0));
+      function _0x1ac166(_0x3be4db, _0x357269) {
+        const _0x1c3e24 = _0x2b3203;
+        _0x3be4db[_0x1c3e24(0x17b)] !== null &&
+          (_0x3be4db[_0x1c3e24(0x15c)] !== socket["id"]
+            ? (_0x357269[_0x1c3e24(0x1d5)] =
+                _0x1c3e24(0x193) + _0x3be4db["msg"] + _0x1c3e24(0x16a))
+            : (_0x357269[_0x1c3e24(0x1d5)] =
+                _0x1c3e24(0x1a1) +
+                _0x3be4db[_0x1c3e24(0x17b)] +
+                _0x1c3e24(0x16a)),
+          chatList["appendChild"](_0x357269));
       }
-      sendBtn[_0x16282d(0x1c2)](_0x16282d(0x200), (_0x431946) => {
-        const _0x3300df = _0x16282d;
-        _0x431946[_0x3300df(0x213)]();
+      sendBtn[_0x2b3203(0x1cf)](_0x2b3203(0x1c3), (_0x31cc0d) => {
+        const _0x41be0b = _0x2b3203;
+        _0x31cc0d[_0x41be0b(0x1ad)]();
         if (
-          chatField[_0x3300df(0x1db)] !== null &&
-          chatField[_0x3300df(0x1db)] !== ""
+          chatField[_0x41be0b(0x1d3)] !== null &&
+          chatField[_0x41be0b(0x1d3)] !== ""
         ) {
-          const _0x11b026 = {
+          const _0x4944cb = {
             remoteId: remoteId,
             userId: socket["id"],
-            msg: chatField[_0x3300df(0x1db)],
+            msg: chatField[_0x41be0b(0x1d3)],
           };
-          socket[_0x3300df(0x1d2)](_0x3300df(0x218), _0x11b026),
-            (chatField[_0x3300df(0x1db)] = null);
+          socket["emit"](_0x41be0b(0x15a), _0x4944cb),
+            (chatField[_0x41be0b(0x1d3)] = null);
         }
       }),
-        chatField[_0x16282d(0x1c2)](_0x16282d(0x1c8), (_0x27b32b) => {
-          const _0x55e7a0 = _0x16282d;
-          (_0x27b32b[_0x55e7a0(0x19b)] === _0x55e7a0(0x1f2) ||
-            _0x27b32b[_0x55e7a0(0x1f9)] === 0xd) &&
-            (_0x27b32b[_0x55e7a0(0x213)](), sendBtn[_0x55e7a0(0x200)]());
+        chatField[_0x2b3203(0x1cf)](_0x2b3203(0x16b), (_0x16f578) => {
+          const _0x2e7007 = _0x2b3203;
+          (_0x16f578[_0x2e7007(0x178)] === _0x2e7007(0x176) ||
+            _0x16f578[_0x2e7007(0x17f)] === 0xd) &&
+            (_0x16f578[_0x2e7007(0x1ad)](), sendBtn["click"]());
         }),
-        startStopBtn[_0x16282d(0x1c2)](_0x16282d(0x200), (_0x35f984) => {
-          const _0xc4dc7b = _0x16282d;
-          _0x35f984[_0xc4dc7b(0x213)](),
-            startStopBtn[_0xc4dc7b(0x1e9)] === _0xc4dc7b(0x1e7)
-              ? (_0x16e40b(),
-                (nextBtn[_0xc4dc7b(0x1f1)] = _0xc4dc7b(0x1b7)),
-                (nextBtn[_0xc4dc7b(0x1f1)][_0xc4dc7b(0x21a)] =
-                  _0xc4dc7b(0x1de)),
-                (startStopBtn[_0xc4dc7b(0x1e9)] = "Stop"))
-              : (_0x56de5f(),
-                _0xa9d6c3(),
-                _0xdaf3b(),
+        startStopBtn["addEventListener"](_0x2b3203(0x1c3), (_0x5eecd1) => {
+          const _0x17ca46 = _0x2b3203;
+          _0x5eecd1[_0x17ca46(0x1ad)](),
+            startStopBtn["innerText"] === "Start"
+              ? (_0x3928b4(),
+                (nextBtn[_0x17ca46(0x1b5)] = _0x17ca46(0x17c)),
+                (nextBtn[_0x17ca46(0x1b5)]["pointerEvents"] = _0x17ca46(0x1c2)),
+                (startStopBtn[_0x17ca46(0x177)] = _0x17ca46(0x185)))
+              : (_0x4e7146(),
+                _0x4c3d77(),
+                _0x4dc405(),
                 (chatList["innerHTML"] = ""),
-                (nextBtn[_0xc4dc7b(0x1f1)] = "opacity:\x20.4;"),
-                (nextBtn["style"][_0xc4dc7b(0x21a)] = _0xc4dc7b(0x1e8)),
-                (loader[_0xc4dc7b(0x1f1)] = _0xc4dc7b(0x1b0)),
-                (onlineContainer[_0xc4dc7b(0x1f1)] = _0xc4dc7b(0x206)),
-                (chatField[_0xc4dc7b(0x1d1)] = !![]),
-                (startStopBtn[_0xc4dc7b(0x1e9)] = _0xc4dc7b(0x1e7)),
-                (startStopBtn[_0xc4dc7b(0x1f1)] = _0xc4dc7b(0x1b7))),
-            (reportBtn[_0xc4dc7b(0x1f1)] = _0xc4dc7b(0x217)),
-            (reportBtn[_0xc4dc7b(0x1f1)][_0xc4dc7b(0x21a)] = _0xc4dc7b(0x1e8));
+                (nextBtn[_0x17ca46(0x1b5)] = "opacity:\x20.4;"),
+                (nextBtn[_0x17ca46(0x1b5)][_0x17ca46(0x1cc)] =
+                  _0x17ca46(0x161)),
+                (loader[_0x17ca46(0x1b5)] = _0x17ca46(0x197)),
+                (onlineContainer["style"] = _0x17ca46(0x181)),
+                (chatField[_0x17ca46(0x15d)] = !![]),
+                (startStopBtn[_0x17ca46(0x177)] = "Start"),
+                (startStopBtn[_0x17ca46(0x1b5)] = _0x17ca46(0x17c))),
+            (reportBtn[_0x17ca46(0x1b5)] = _0x17ca46(0x164)),
+            (reportBtn[_0x17ca46(0x1b5)][_0x17ca46(0x1cc)] = _0x17ca46(0x161));
         }),
-        nextBtn[_0x16282d(0x1c2)](_0x16282d(0x200), (_0x3bf2af) => {
-          const _0x902a90 = _0x16282d;
-          _0x3bf2af[_0x902a90(0x213)](), _0x56de5f(), _0x12bd90();
+        nextBtn[_0x2b3203(0x1cf)](_0x2b3203(0x1c3), (_0x20e71c) => {
+          _0x20e71c["preventDefault"](), _0x4e7146(), _0x47703b();
         }),
         socket["on"]("leave", () => {
-          _0x12bd90();
+          _0x47703b();
         });
-      function _0x12bd90() {
-        const _0x387ae6 = _0x16282d;
-        (chatList[_0x387ae6(0x1e3)] = ""),
-          (chatField[_0x387ae6(0x1d1)] = !![]),
-          _0xdaf3b(),
-          _0x16e40b();
+      function _0x47703b() {
+        const _0xf8f642 = _0x2b3203;
+        (chatList[_0xf8f642(0x1d5)] = ""),
+          (chatField[_0xf8f642(0x15d)] = !![]),
+          _0x4dc405(),
+          _0x3928b4();
       }
-      function _0x16e40b() {
-        const _0x4e7f3c = _0x16282d;
-        (onlineContainer[_0x4e7f3c(0x1f1)] = _0x4e7f3c(0x1b0)),
-          (loader[_0x4e7f3c(0x1f1)] = _0x4e7f3c(0x206));
-        const _0x180571 = {
+      function _0x3928b4() {
+        const _0x29c187 = _0x2b3203;
+        (onlineContainer[_0x29c187(0x1b5)] = _0x29c187(0x197)),
+          (loader[_0x29c187(0x1b5)] = _0x29c187(0x181));
+        const _0x3edffc = {
           teleId: teleId,
           userId: socket["id"],
           flags: flags,
         };
-        socket[_0x4e7f3c(0x1d2)](_0x4e7f3c(0x1d6), _0x180571);
+        socket[_0x29c187(0x16e)](_0x29c187(0x1aa), _0x3edffc);
       }
-      function _0xa9d6c3() {
-        const _0x1ce25f = _0x16282d,
-          _0x3601b9 = { userId: socket["id"] };
-        socket[_0x1ce25f(0x1d2)](_0x1ce25f(0x1ab), _0x3601b9);
+      function _0x4c3d77() {
+        const _0x20a1cf = _0x2b3203,
+          _0x5b4b0e = { userId: socket["id"] };
+        socket[_0x20a1cf(0x16e)]("remove", _0x5b4b0e);
       }
-      socket["on"](_0x16282d(0x1fd), (_0x205ed2) => {
-        const _0x3db0a6 = _0x16282d;
-        _0x205ed2[_0x3db0a6(0x1f3)] !== socket["id"] &&
-          ((loader[_0x3db0a6(0x1f1)] = _0x3db0a6(0x1b0)),
-          (chatField[_0x3db0a6(0x1d1)] = ![]),
-          (sendBtn[_0x3db0a6(0x1f1)] = _0x3db0a6(0x1b7)),
-          (sendBtn[_0x3db0a6(0x1f1)]["pointerEvents"] = "auto"),
-          (remoteId = _0x205ed2[_0x3db0a6(0x1f3)]),
-          (call = _0x309a7f[_0x3db0a6(0x21d)](
+      socket["on"](_0x2b3203(0x199), (_0x1c3fe1) => {
+        const _0x18a3de = _0x2b3203;
+        _0x1c3fe1[_0x18a3de(0x15c)] !== socket["id"] &&
+          ((loader[_0x18a3de(0x1b5)] = _0x18a3de(0x197)),
+          (chatField[_0x18a3de(0x15d)] = ![]),
+          (sendBtn[_0x18a3de(0x1b5)] = _0x18a3de(0x17c)),
+          (sendBtn["style"][_0x18a3de(0x1cc)] = _0x18a3de(0x1c2)),
+          (remoteId = _0x1c3fe1[_0x18a3de(0x15c)]),
+          (call = _0x102a42[_0x18a3de(0x1a2)](
             remoteId,
-            window[_0x3db0a6(0x1a3)]
+            window[_0x18a3de(0x15e)]
           )),
-          call["on"](_0x3db0a6(0x1a3), (_0x4a7941) => {
-            const _0x17937c = _0x3db0a6;
-            (remoteVideo[_0x17937c(0x207)] = _0x4a7941),
-              remoteVideo["setAttribute"]("playsinline", ""),
-              remoteVideo["setAttribute"](_0x17937c(0x1f0), ""),
-              remoteVideo[_0x17937c(0x1c2)]("loadedmetadata", () => {
-                const _0x552477 = _0x17937c;
-                remoteVideo[_0x552477(0x1be)]();
+          call["on"](_0x18a3de(0x15e), (_0x14e102) => {
+            const _0x19ede5 = _0x18a3de;
+            (remoteVideo[_0x19ede5(0x183)] = _0x14e102),
+              remoteVideo["setAttribute"](_0x19ede5(0x182), ""),
+              remoteVideo[_0x19ede5(0x159)](_0x19ede5(0x19a), ""),
+              remoteVideo[_0x19ede5(0x1cf)](_0x19ede5(0x19e), () => {
+                remoteVideo["play"]();
               });
           }),
-          call["on"]("close", () => {
-            const _0x713be5 = _0x3db0a6;
-            remoteVideo[_0x713be5(0x207)] = null;
+          call["on"](_0x18a3de(0x190), () => {
+            const _0x58f66b = _0x18a3de;
+            remoteVideo[_0x58f66b(0x183)] = null;
           }),
-          _0x309a7f["on"](_0x3db0a6(0x21d), (_0x4092ee) => {
-            const _0x4fb99b = _0x3db0a6;
-            _0x4092ee[_0x4fb99b(0x199)](window[_0x4fb99b(0x1a3)]),
-              _0x4092ee["on"](_0x4fb99b(0x1a3), (_0xf85b5a) => {
-                const _0x4dc2c9 = _0x4fb99b;
-                (remoteVideo["srcObject"] = _0xf85b5a),
-                  remoteVideo[_0x4dc2c9(0x1e1)](_0x4dc2c9(0x1ac), ""),
-                  remoteVideo[_0x4dc2c9(0x1e1)](_0x4dc2c9(0x1f0), ""),
-                  remoteVideo[_0x4dc2c9(0x1c2)](_0x4dc2c9(0x1df), () => {
-                    const _0x5d08f4 = _0x4dc2c9;
-                    remoteVideo[_0x5d08f4(0x1be)]();
+          _0x102a42["on"](_0x18a3de(0x1a2), (_0x14767b) => {
+            const _0x4ed062 = _0x18a3de;
+            _0x14767b["answer"](window[_0x4ed062(0x15e)]),
+              _0x14767b["on"](_0x4ed062(0x15e), (_0x23c5dd) => {
+                const _0x33d9e0 = _0x4ed062;
+                (remoteVideo[_0x33d9e0(0x183)] = _0x23c5dd),
+                  remoteVideo["setAttribute"](_0x33d9e0(0x182), ""),
+                  remoteVideo[_0x33d9e0(0x159)](_0x33d9e0(0x19a), ""),
+                  remoteVideo[_0x33d9e0(0x1cf)](_0x33d9e0(0x19e), () => {
+                    const _0x2a3156 = _0x33d9e0;
+                    remoteVideo[_0x2a3156(0x16f)]();
                   });
               });
           }),
-          (reportBtn[_0x3db0a6(0x1f1)] = _0x3db0a6(0x1b7)),
-          (reportBtn["style"][_0x3db0a6(0x21a)] = _0x3db0a6(0x1de)),
-          reportBtn[_0x3db0a6(0x1c2)](_0x3db0a6(0x200), () => {
-            const _0x212075 = _0x3db0a6;
-            loadModal(_0x212075(0x1b3));
+          (reportBtn[_0x18a3de(0x1b5)] = _0x18a3de(0x17c)),
+          (reportBtn[_0x18a3de(0x1b5)][_0x18a3de(0x1cc)] = _0x18a3de(0x1c2)),
+          reportBtn[_0x18a3de(0x1cf)](_0x18a3de(0x1c3), () => {
+            const _0x10ea2c = _0x18a3de;
+            loadModal(_0x10ea2c(0x194));
           }),
-          sendReportBtn[_0x3db0a6(0x1c2)]("click", () => {
-            const _0x323ff4 = _0x3db0a6;
-            (flags[_0x205ed2[_0x323ff4(0x1b4)]] = Date[_0x323ff4(0x204)]()),
-              localStorage["setItem"](
-                _0x323ff4(0x19e),
-                JSON["stringify"](flags)
+          sendReportBtn[_0x18a3de(0x1cf)](_0x18a3de(0x1c3), () => {
+            const _0x37b53e = _0x18a3de;
+            (flags[_0x1c3fe1[_0x37b53e(0x1c1)]] = Date[_0x37b53e(0x15f)]()),
+              localStorage[_0x37b53e(0x1c7)](
+                _0x37b53e(0x1c8),
+                JSON[_0x37b53e(0x175)](flags)
               );
-            const _0x382b9e = {
-              userId: _0x205ed2[_0x323ff4(0x1f3)],
-              flagger: teleId,
-            };
-            socket[_0x323ff4(0x1d2)](_0x323ff4(0x1d9), _0x382b9e),
+            const _0x1ab94c = { userId: _0x1c3fe1["userId"], flagger: teleId };
+            socket[_0x37b53e(0x16e)]("flag", _0x1ab94c),
               loadModal(""),
-              _0x56de5f(),
-              _0x12bd90();
+              _0x4e7146(),
+              _0x47703b();
           }));
       });
-      function _0xdaf3b() {
-        const _0x10592e = _0x16282d;
-        (sendBtn[_0x10592e(0x1f1)] = _0x10592e(0x217)),
-          (sendBtn[_0x10592e(0x1f1)]["pointerEvents"] = _0x10592e(0x1e8)),
+      function _0x4dc405() {
+        const _0x36fbab = _0x2b3203;
+        (sendBtn["style"] = _0x36fbab(0x164)),
+          (sendBtn[_0x36fbab(0x1b5)][_0x36fbab(0x1cc)] = _0x36fbab(0x161)),
           (remoteId = null),
           call !== null &&
             call !== undefined &&
-            (call[_0x10592e(0x216)](), call == null),
-          remoteVideo["srcObject"] !== null &&
+            (call[_0x36fbab(0x190)](), call == null),
+          remoteVideo[_0x36fbab(0x183)] !== null &&
             remoteVideo !== undefined &&
-            (remoteVideo[_0x10592e(0x207)] = null);
+            (remoteVideo["srcObject"] = null);
       }
-      function _0x56de5f() {
-        const _0x18d53f = _0x16282d;
-        (reportBtn[_0x18d53f(0x1f1)] = _0x18d53f(0x217)),
-          (reportBtn[_0x18d53f(0x1f1)][_0x18d53f(0x21a)] = _0x18d53f(0x1e8));
-        const _0xcbc575 = { remoteId: remoteId, userId: socket["id"] };
-        if (remoteId !== null) socket[_0x18d53f(0x1d2)]("leave", _0xcbc575);
+      function _0x4e7146() {
+        const _0x1dc807 = _0x2b3203;
+        (reportBtn[_0x1dc807(0x1b5)] = "opacity:\x20.4;"),
+          (reportBtn[_0x1dc807(0x1b5)][_0x1dc807(0x1cc)] = _0x1dc807(0x161));
+        const _0x27c79f = { remoteId: remoteId, userId: socket["id"] };
+        if (remoteId !== null) socket["emit"](_0x1dc807(0x17e), _0x27c79f);
       }
-      window["Telegram"][_0x16282d(0x1ef)][_0x16282d(0x1b5)](
-        _0x16282d(0x216),
+      window[_0x2b3203(0x1a5)][_0x2b3203(0x1c6)]["onEvent"](
+        _0x2b3203(0x190),
         () => {
-          _0x56de5f(), _0xdaf3b(), socket["disconnect"]();
+          const _0xb62a1e = _0x2b3203;
+          _0x4e7146(), _0x4dc405(), socket[_0xb62a1e(0x18d)]();
         }
       ),
-        window[_0x16282d(0x1c2)](_0x16282d(0x1f8), () => {
-          const _0x159141 = _0x16282d;
-          _0x56de5f(), _0xdaf3b(), socket[_0x159141(0x1a5)]();
+        window[_0x2b3203(0x1cf)](_0x2b3203(0x171), () => {
+          _0x4e7146(), _0x4dc405(), socket["disconnect"]();
         });
     });
   });
-  function loadModal(_0x99fbea) {
-    const _0x490982 = _0x10b975,
-      _0x51f638 =
-        document[_0x490982(0x198)]["href"][_0x490982(0x1a1)]("/")[0x0];
-    if (_0x51f638[_0x490982(0x1a7)]("#")) {
-      const _0x33a8ce = _0x51f638[_0x490982(0x1a1)]("#");
-      window["location"][_0x490982(0x1e4)](_0x33a8ce[0x0] + "#" + _0x99fbea);
+  function loadModal(_0x2cd844) {
+    const _0x2b0292 = _0x28c2e7,
+      _0x187943 =
+        document[_0x2b0292(0x174)][_0x2b0292(0x1ce)][_0x2b0292(0x1a0)](
+          "/"
+        )[0x0];
+    if (_0x187943[_0x2b0292(0x19c)]("#")) {
+      const _0x12ae18 = _0x187943[_0x2b0292(0x1a0)]("#");
+      window[_0x2b0292(0x174)]["assign"](_0x12ae18[0x0] + "#" + _0x2cd844);
     } else
-      window[_0x490982(0x198)][_0x490982(0x1e4)](_0x51f638 + "#" + _0x99fbea);
+      window[_0x2b0292(0x174)][_0x2b0292(0x1b0)](_0x187943 + "#" + _0x2cd844);
   }
-  function showMsg(_0x364d83) {
-    const _0x5f3835 = _0x10b975;
-    (popMsg[_0x5f3835(0x1e9)] = _0x364d83), loadModal(_0x5f3835(0x1aa));
+  function showMsg(_0x3764bc) {
+    const _0x41f389 = _0x28c2e7;
+    (popMsg[_0x41f389(0x177)] = _0x3764bc), loadModal(_0x41f389(0x184));
   }
   function formatWalletAddress(
-    _0x5f2e85,
-    _0x217c40 = 0x6,
-    _0x1f89a7 = 0x4,
-    _0x58cb9c = _0x10b975(0x1b8)
+    _0x1db3fc,
+    _0x3fba39 = 0x6,
+    _0x31691c = 0x4,
+    _0x289a7a = _0x28c2e7(0x1b7)
   ) {
-    const _0x481285 = _0x10b975;
-    if (_0x5f2e85["length"] <= _0x217c40 + _0x1f89a7) return _0x5f2e85;
+    const _0x208da3 = _0x28c2e7;
+    if (_0x1db3fc[_0x208da3(0x1cb)] <= _0x3fba39 + _0x31691c) return _0x1db3fc;
     return (
       "" +
-      _0x5f2e85[_0x481285(0x20c)](0x0, _0x217c40) +
-      _0x58cb9c +
-      _0x5f2e85[_0x481285(0x20c)](-_0x1f89a7)
+      _0x1db3fc[_0x208da3(0x1ab)](0x0, _0x3fba39) +
+      _0x289a7a +
+      _0x1db3fc[_0x208da3(0x1ab)](-_0x31691c)
     );
   }
-  function toComma(_0x1d1ec3) {
-    return _0x1d1ec3["toString"]()["replace"](/\B(?=(\d{3})+(?!\d))/g, ",");
+  function toComma(_0x3695ab) {
+    const _0x4103aa = _0x28c2e7;
+    return _0x3695ab[_0x4103aa(0x1a3)]()["replace"](
+      /\B(?=(\d{3})+(?!\d))/g,
+      ","
+    );
   }
-}
-function _0x5c84() {
-  const _0x53b6d8 = [
-    "value",
-    "mozGetUserMedia",
-    "log",
-    "auto",
-    "loadedmetadata",
-    "3096dRsdpx",
-    "setAttribute",
-    "Wallet\x20Connection\x20Error:",
-    "innerHTML",
-    "assign",
-    "wallet",
-    "wallet-btn",
-    "Start",
-    "none",
-    "innerText",
-    "Write\x20a\x20note",
-    "connect",
-    "scrollHeight",
-    "0/1024",
-    "note-content",
-    "WebApp",
-    "autoplay",
-    "style",
-    "Enter",
-    "userId",
-    "application/json",
-    "expand",
-    "tns",
-    "Wallet\x20connection\x20failed.",
-    "beforeunload",
-    "keyCode",
-    "\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22msg\x22><span\x20class=\x22other\x22>User:\x20</span>",
-    "local-video",
-    "Note\x20published\x20✅",
-    "found",
-    "getElementById",
-    "open",
-    "click",
-    "chat-field",
-    "sendTransaction",
-    "18703520yMSynd",
-    "now",
-    "Telegram",
-    "display:\x20flex;",
-    "srcObject",
-    "3370oOEqdC",
-    "setItem",
-    "Publish\x20|\x200.1\x20Ton",
-    "msGetUserMedia",
-    "slice",
-    "json",
-    "popup_note",
-    "error",
-    "loader",
-    "/note",
-    "\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p\x20class=\x22msg\x22><span\x20class=\x22you\x22>You:\x20</span>",
-    "preventDefault",
-    "12365976UtugVQ",
-    "showAlert",
-    "close",
-    "opacity:\x20.4;",
-    "chat",
-    "online",
-    "pointerEvents",
-    "ok-btn",
-    "</p>",
-    "call",
-    "location",
-    "answer",
-    "/peerjs",
-    "key",
-    "4157640AkqECN",
-    "Wallet:\x20Not\x20connected",
-    "flags",
-    "online-container",
-    "TonConnectUI",
-    "split",
-    "parse",
-    "stream",
-    "Wallet:\x20",
-    "disconnect",
-    "flagger",
-    "includes",
-    "address",
-    "stringify",
-    "popup_msg",
-    "remove",
-    "playsinline",
-    "connectWallet",
-    "start-stop",
-    "removeItem",
-    "display:\x20none;",
-    "webkitGetUserMedia",
-    "/1024",
-    "popup_report",
-    "teleId",
-    "onEvent",
-    "account",
-    "opacity:\x201;",
-    "xxxxxxxxx",
-    "275XgtEJm",
-    "msg",
-    "/toWallet",
-    "10407852hjSwAP",
-    "length",
-    "play",
-    "input",
-    "https://vebbo.onrender.com",
-    "currentTarget",
-    "addEventListener",
-    "3CWygVw",
-    "createElement",
-    "/notepay",
-    "start",
-    "POST",
-    "keyup",
-    "note-count",
-    "note",
-    "getItem",
-    "walletLabel",
-    "obj",
-    "chat-list",
-    "5814092egGeWu",
-    "appendChild",
-    "disabled",
-    "emit",
-    "101SYpPXl",
-    "Connect\x20Wallet",
-    "popup_start",
-    "peer",
-    "innerWidth",
-    "localhost",
-    "flag",
-    "vebbo.onrender.com",
-  ];
-  _0x5c84 = function () {
-    return _0x53b6d8;
-  };
-  return _0x5c84();
 }
