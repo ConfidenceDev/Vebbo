@@ -1,2 +1,2 @@
 # Vebbo
- Talk with strangers | Make new friends - All on Telegram
+ Talk with people | Make new friends - All on Telegram
