@@ -9,8 +9,8 @@ Talk with people | Make new friends - All on Telegram
 # Demo
 
 <p float="left">
-<img src="https://github.com/ConfidenceDev/Plurg/blob/main/screenshots/one.png?raw=true" width="148">
-<img src="https://github.com/ConfidenceDev/Plurg/blob/main/screenshots/two.png?raw=true" width="148">
+<img src="https://github.com/ConfidenceDev/Vebbo/blob/main/screens/p2.jpeg" width="148">
+<img src="https://github.com/ConfidenceDev/Vebbo/blob/main/screens/p1.jpeg" width="148">
 </p>
 
 # Contact
